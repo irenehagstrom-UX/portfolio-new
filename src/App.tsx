@@ -20,7 +20,7 @@ function App() {
   const experienceProjects = [
     {
       id: "1",
-      title: "Senior Product Designer",
+      title: "Senior Product & UX Designer",
       image:
         "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
       additionalImages: [
@@ -65,7 +65,7 @@ function App() {
     },
     {
       id: "3",
-      title: "Service Design Manager / Product Owner",
+      title: "Service Design Manager",
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
       additionalImages: [
@@ -274,7 +274,7 @@ function App() {
     },
     {
       id: "4",
-      title: "Sustainable Fashion Design - Honeyants",
+      title: "Sustainable Fashion Design",
       image:
         "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
       additionalImages: [
@@ -331,7 +331,7 @@ function App() {
     },
     {
       id: "6",
-      title: "Educational Evaluation Tool Design",
+      title: "EdTech Evaluation Tool Design",
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
       additionalImages: [
@@ -432,7 +432,7 @@ function App() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/hero-background.png)" }}
+          style={{ backgroundImage: "url(/images/background_b.jpg)" }}
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
@@ -443,14 +443,14 @@ function App() {
         {showNavigation && (
           <header className="container mx-auto px-4 py-6">
             <nav className="flex justify-between items-center">
-              <div className="text-2xl font-bold text-white drop-shadow-lg flex">
+              <div className="text-lg font-normal text-white drop-shadow-lg flex font-satoshi">
                 Portfolio of Irene Hagström
               </div>
               <ul className="flex space-x-6 h-[30px]">
                 <li>
                   <button
                     onClick={() => navigate("/")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md"
+                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
                   >
                     Home
                   </button>
@@ -458,7 +458,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/roles")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md"
+                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
                   >
                     Roles
                   </button>
@@ -466,7 +466,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/discipline")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md"
+                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
                   >
                     Discipline
                   </button>
@@ -474,7 +474,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/about-me")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md"
+                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
                   >
                     About
                   </button>

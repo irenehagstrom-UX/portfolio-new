@@ -46,59 +46,7 @@ interface PortfolioGridProps {
 }
 
 const PortfolioGrid = ({
-  projects = [
-    {
-      id: "1",
-      title: "E-commerce Redesign",
-      description:
-        "Complete UX overhaul of an e-commerce platform focusing on conversion optimization",
-      image:
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
-      tags: ["UX Design", "UI Design", "E-commerce"],
-    },
-    {
-      id: "2",
-      title: "Banking App",
-      description:
-        "Mobile banking application with focus on accessibility and security",
-      image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-      tags: ["Mobile", "UI Design", "Fintech"],
-    },
-    {
-      id: "3",
-      title: "Healthcare Dashboard",
-      description: "Data visualization dashboard for healthcare professionals",
-      image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-      tags: ["Dashboard", "Data Visualization", "Healthcare"],
-    },
-    {
-      id: "4",
-      title: "Brand Identity",
-      description: "Brand identity designs for startups",
-      image:
-        "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
-      tags: ["Branding", "Logo Design", "Identity", "Web Design"],
-    },
-    {
-      id: "5",
-      title: "Social Media App",
-      description:
-        "Social networking platform focused on creative professionals",
-      image:
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-      tags: ["Social Media", "UX Research", "Mobile"],
-    },
-    {
-      id: "6",
-      title: "Marketing Campaign",
-      description: "Integrated marketing campaign for product launch",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-      tags: ["Marketing", "Campaign", "Strategy"],
-    },
-  ],
+  projects = [],
   title = "Portfolio Projects",
   description = "Browse some sample work",
   type = "discipline",
@@ -112,10 +60,12 @@ const PortfolioGrid = ({
   };
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-black/70">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-black/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
+          <h2 className="text-3xl font-light text-white mb-4 font-satoshi">
+            {title}
+          </h2>
           <p className="text-lg text-white/80 max-w-3xl mx-auto">
             {description}
           </p>
@@ -139,10 +89,10 @@ const PortfolioGrid = ({
                   />
                 </div>
                 <CardContent className="p-5">
-                  <h3 className="text-xl font-semibold mb-2">
+                  <h3 className="text-xl font-light mb-2 font-satoshi">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-gray-500 text-sm mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -150,7 +100,7 @@ const PortfolioGrid = ({
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="bg-[#BED2C9] text-black hover:bg-[#BED2C9] cursor-default"
+                        className="bg-[#d7edf0] text-[#767676] hover:bg-[#d7edf0] cursor-default"
                       >
                         {tag}
                       </Badge>
@@ -167,7 +117,7 @@ const PortfolioGrid = ({
             {selectedProject && (
               <>
                 <DialogHeader>
-                  <DialogTitle className="text-2xl">
+                  <DialogTitle className="text-2xl font-light font-satoshi">
                     {selectedProject.title}
                   </DialogTitle>
                   {type === "experience" && (
@@ -190,7 +140,9 @@ const PortfolioGrid = ({
                     <div className="space-y-6">
                       {selectedProject.modalContent.overview && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">Overview</h3>
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                            Overview
+                          </h3>
                           <p className="text-muted-foreground">
                             {selectedProject.modalContent.overview}
                           </p>
@@ -199,7 +151,9 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.process && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">Process</h3>
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                            Process
+                          </h3>
                           <p className="text-muted-foreground">
                             {selectedProject.modalContent.process}
                           </p>
@@ -208,7 +162,9 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.outcomes && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">Outcomes</h3>
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                            Outcomes
+                          </h3>
                           <p className="text-muted-foreground">
                             {selectedProject.modalContent.outcomes}
                           </p>
@@ -217,7 +173,7 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.year && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
                             Production year
                           </h3>
                           <p className="text-muted-foreground">
@@ -230,7 +186,7 @@ const PortfolioGrid = ({
                     <div className="space-y-6">
                       {selectedProject.experience && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
                             Experience
                           </h3>
                           <p className="text-muted-foreground">
@@ -241,7 +197,9 @@ const PortfolioGrid = ({
 
                       {selectedProject.year && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">Year</h3>
+                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                            Year
+                          </h3>
                           <p className="text-muted-foreground">
                             {selectedProject.year}
                           </p>
@@ -250,34 +208,16 @@ const PortfolioGrid = ({
 
                       {selectedProject.outcomes && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2">Outcomes</h3>
+                          <h3 className="text-lg font-medium mb-2 font-satoshi">
+                            Outcomes
+                          </h3>
                           <p className="text-muted-foreground">
                             {selectedProject.outcomes}
                           </p>
                         </div>
                       )}
                     </div>
-                  ) : (
-                    <div className="space-y-4 mb-6">
-                      <h3 className="text-lg font-medium">
-                        Process & Approach
-                      </h3>
-                      <p className="text-muted-foreground">
-                        The design process included user research, competitive
-                        analysis, wireframing, prototyping, and user testing.
-                        Key challenges included balancing aesthetic
-                        considerations with functional requirements.
-                      </p>
-
-                      <h3 className="text-lg font-medium mt-4">Outcomes</h3>
-                      <p className="text-muted-foreground">
-                        The final design resulted in improved user engagement
-                        metrics and positive client feedback. The solution
-                        successfully addressed the initial project goals while
-                        providing a foundation for future iterations.
-                      </p>
-                    </div>
-                  )}
+                  ) : null}
 
                   <div className="flex flex-wrap gap-2 mt-6">
                     {selectedProject.tags.map((tag, index) => (

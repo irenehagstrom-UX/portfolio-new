@@ -79,10 +79,10 @@ const Hero = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-white drop-shadow-lg">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-white drop-shadow-lg font-satoshi">
             {name}
           </h1>
-          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6 drop-shadow-lg">
+          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6 drop-shadow-lg font-satoshi">
             {headline}
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto mb-10 drop-shadow-md">

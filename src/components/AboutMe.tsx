@@ -22,6 +22,7 @@ import {
   Camera,
   Palette,
   Users,
+  Heart,
 } from "lucide-react";
 
 const AboutMe = () => {
@@ -108,13 +109,14 @@ const AboutMe = () => {
   return (
     <div className="min-h-screen relative">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/hero-background.png)" }}
-        />
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("/images/background_b.jpg")',
+        }}
+      />
+      <div className="absolute inset-0 bg-black/40" />
+
       {/* White Content Frame */}
       <div className="relative z-10 min-h-screen flex items-center justify-center p-8">
         <div className="bg-white rounded-lg shadow-2xl max-w-7xl w-full overflow-y-auto max-h-[90vh]">
@@ -128,10 +130,7 @@ const AboutMe = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="mb-8"
                 >
-                  <h1
-                    className="text-8xl font-light text-gray-900 leading-none tracking-tight mb-2"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
+                  <h1 className="text-8xl font-light text-gray-900 leading-none tracking-tight mb-2 font-satoshi">
                     IRENE
                   </h1>
                   <div className="flex items-center gap-4 mb-4">
@@ -156,7 +155,9 @@ const AboutMe = () => {
                     <button
                       className="flex items-center gap-3 w-full text-left text-sm text-gray-700 hover:text-gray-900"
                       onClick={() =>
-                        window.open("https://linkedin.com/in/irene-hagstrom")
+                        window.open(
+                          "https://www.linkedin.com/in/irene-hagström",
+                        )
                       }
                     >
                       <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
@@ -167,7 +168,8 @@ const AboutMe = () => {
                     <button
                       className="flex items-center gap-3 w-full text-left text-sm text-gray-700 hover:text-gray-900"
                       onClick={() =>
-                        (window.location.href = "mailto:irene@example.com")
+                        (window.location.href =
+                          "mailto:irene.hagstrom@gmail.com")
                       }
                     >
                       <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
@@ -215,13 +217,12 @@ const AboutMe = () => {
                     </span>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                    <h2
-                      className="text-5xl font-light text-white mb-4 leading-tight"
-                      style={{ fontFamily: "Georgia, serif" }}
-                    >
-                      She's talking
+                    <h2 className="text-5xl font-light text-white mb-4 leading-tight font-satoshi">
+                      UX Strategist &
                       <br />
-                      <span className="font-bold text-6xl">TO US</span>
+                      <span className="font-bold text-6xl">
+                        Product Designer
+                      </span>
                     </h2>
                   </div>
                 </div>
@@ -281,15 +282,12 @@ const AboutMe = () => {
                     <span className="text-4xl font-bold text-black">06</span>
                     <div className="w-8 h-0.5 bg-black"></div>
                   </div>
-                  <h3
-                    className="text-3xl font-light mb-8 text-black"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
+                  <h3 className="text-3xl font-light mb-8 text-black font-satoshi">
                     EXPERTISE
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700">
+                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700 font-satoshi">
                         Design Skills
                       </h4>
                       <div className="space-y-3">
@@ -304,7 +302,7 @@ const AboutMe = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700">
+                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700 font-satoshi">
                         AI Skills
                       </h4>
                       <div className="space-y-3">
@@ -319,7 +317,7 @@ const AboutMe = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700">
+                      <h4 className="text-sm font-medium mb-4 uppercase tracking-widest text-gray-700 font-satoshi">
                         Management Skills
                       </h4>
                       <div className="space-y-3">
@@ -345,7 +343,7 @@ const AboutMe = () => {
                 className="lg:col-span-1"
               >
                 <div className="bg-gray-100 p-6 h-full">
-                  <div className="text-2xl font-bold text-gray-900 mb-6">
+                  <div className="text-2xl font-bold text-gray-900 mb-6 font-satoshi">
                     Life recap
                   </div>
                   <div className="space-y-4">
@@ -391,6 +389,9 @@ const AboutMe = () => {
                         <span className="text-lg" title="Turkey">
                           🇹🇷
                         </span>
+                        <span className="text-lg" title="Switzerland">
+                          🇨🇭
+                        </span>
                         <span className="text-lg" title="Germany">
                           🇩🇪
                         </span>
@@ -427,9 +428,9 @@ const AboutMe = () => {
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-900/20">
                     <p className="text-s text-gray-800 italic">
-                      "Growing up across different countries has shaped how I
-                      see people and the world. It helped me become someone who
-                      connects easily, adapts quickly and listens well."
+                      "Living in different countries and cultures has shaped how
+                      I see people and the world. It shaped me to become someone
+                      who connects easily, adapts quickly and listens well."
                     </p>
                   </div>
                 </div>
@@ -450,10 +451,7 @@ const AboutMe = () => {
                     <span className="text-2xl font-bold text-gray-800">14</span>
                     <div className="w-6 h-0.5 bg-gray-700"></div>
                   </div>
-                  <h3
-                    className="text-xl font-light mb-6 text-gray-800"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
+                  <h3 className="text-xl font-light mb-6 text-gray-800 font-satoshi">
                     TOP READS
                   </h3>
                   <div className="space-y-4">
@@ -462,7 +460,7 @@ const AboutMe = () => {
                         key={index}
                         className="border-b border-gray-200 pb-3"
                       >
-                        <h4 className="font-medium text-sm text-gray-800 mb-1">
+                        <h4 className="font-medium text-sm text-gray-800 mb-1 font-satoshi">
                           {book.title}
                         </h4>
                         <p className="text-xs text-gray-700">{book.author}</p>
@@ -499,10 +497,7 @@ const AboutMe = () => {
                           </span>
                           <div className="w-6 h-0.5 bg-white"></div>
                         </div>
-                        <h3
-                          className="text-xl font-light text-white mb-4"
-                          style={{ fontFamily: "Georgia, serif" }}
-                        >
+                        <h3 className="text-xl font-light text-white mb-4 font-satoshi">
                           ADVENTURES
                         </h3>
                         <div className="space-y-2">
@@ -551,10 +546,7 @@ const AboutMe = () => {
                   className="p-6 h-full"
                   style={{ backgroundColor: "#F4C56D" }}
                 >
-                  <h3
-                    className="text-5xl font-bold text-gray-900 mb-6 leading-none"
-                    style={{ fontFamily: "Georgia, serif" }}
-                  >
+                  <h3 className="text-5xl font-bold text-gray-900 mb-6 leading-none font-satoshi">
                     Life beyond work
                   </h3>
                   <div className="space-y-3">
