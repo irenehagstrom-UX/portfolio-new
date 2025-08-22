@@ -1,19 +1,11 @@
-import { Suspense, useState } from "react";
-import {
-  useRoutes,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Suspense } from "react";
+import { useRoutes, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./components/home";
-import About from "./components/About";
 import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
 import routes from "tempo-routes";
 
 function App() {
-  const location = useLocation();
   const navigate = useNavigate();
 
   // Sample data for portfolio items
@@ -66,12 +58,11 @@ function App() {
     {
       id: "3",
       title: "Service Design Manager",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      image: "/images/PR_keks_uml_diagram.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+        "/images/PD-keks-func_specs_b.png",
+        "/images/PR-Cornelsen_Func specs.png",
+        "/images/PR_keks_uml_diagram.png",
       ],
       tags: ["Service Design", "Cross-department", "Education Tech", "Kanban"],
       description:
@@ -106,12 +97,12 @@ function App() {
     {
       id: "5",
       title: "Founder & Lead Designer",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      image: "/images/PR_fashion_store.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
-        "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
+        "/images/PR_honeyants_screenprinting.jpeg",
+        "/images/PD_fashion_e-com.png",
+        "/images/PR-honeyants-magazine.png",
+        "/images/PD_fashion_fabric.png",
       ],
       tags: [
         "Sustainable Fashion",
@@ -275,12 +266,13 @@ function App() {
     {
       id: "4",
       title: "Sustainable Fashion Design",
-      image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+      image: "/images/PD_fashion_thumb.jpg",
       additionalImages: [
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
-        "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=80",
+        "/images/PD_fashion_clothes.jpg",
+        "/images/PD_fashion_photos.png",
+        "/images/PD_fasion_rack.jpg",
+        "/images/PR_fashion_store.png",
+        "/images/PD_fashion_pants.jpg",
       ],
       tags: [
         "Fashion design",
@@ -303,12 +295,12 @@ function App() {
     {
       id: "5",
       title: "EdTech UX Design",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "/images/PD-edutech_thumb.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+        "/images/PD-learncoachies-flow.png",
+        "/images/PD-learncoachies_book.png",
+        "/images/PD-learncoachies-screen.png",
+        "/images/PD_learncoachies_func_specs.png",
       ],
       tags: [
         "EdTech",
@@ -332,12 +324,11 @@ function App() {
     {
       id: "6",
       title: "EdTech Evaluation Tool Design",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "/images/PD_keks_thumb.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+        "/images/PD-Keks-portal.png",
+        "/images/PD-Keks-student view.png",
+        "/images/PD-Keks-results.png",
       ],
       tags: [
         "UX design",

@@ -116,7 +116,6 @@ const AboutMe = () => {
         }}
       />
       <div className="absolute inset-0 bg-black/40" />
-
       {/* White Content Frame */}
       <div className="relative z-10 min-h-screen flex items-center justify-center p-8">
         <div className="bg-white rounded-lg shadow-2xl max-w-7xl w-full overflow-y-auto max-h-[90vh]">
@@ -554,7 +553,16 @@ const AboutMe = () => {
                       const IconComponent = interest.icon;
                       return (
                         <div key={index} className="flex items-center gap-3">
-                          <IconComponent className="h-4 w-4 text-gray-900" />
+                          {interest.label === "Family time" && (
+                            <Heart className="h-4 w-4 text-gray-900" />
+                          )}
+                          {interest.label === "Travel" && (
+                            <Plane className="h-4 w-4 text-gray-900" />
+                          )}
+                          {interest.label !== "Family time" &&
+                            interest.label !== "Travel" && (
+                              <IconComponent className="h-4 w-4 text-gray-900" />
+                            )}
                           <span className="text-sm font-medium text-gray-900">
                             {interest.label}
                           </span>
@@ -564,8 +572,9 @@ const AboutMe = () => {
                   </div>
                   <div className="mt-6 pt-4 border-t border-gray-900/20">
                     <p className="text-s text-gray-800 italic">
-                      "Creativity flows through everything I do – from design
-                      work to weekend projects."
+                      "I enjoy being creative, from editing old video
+                      recordings, drawing and painting, to helping friends with
+                      interior design."
                     </p>
                   </div>
                 </div>
