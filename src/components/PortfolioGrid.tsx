@@ -132,7 +132,9 @@ const PortfolioGrid = ({
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className="w-full h-auto object-cover"
+                      className={`w-full object-cover ${
+                        selectedProject.id === "7" ? "h-48" : "h-auto"
+                      }`}
                     />
                   </div>
 
@@ -237,10 +239,10 @@ const PortfolioGrid = ({
                               (imageUrl, index) => (
                                 <CarouselItem
                                   key={index}
-                                  className="md:basis-1/2"
+                                  className="md:basis-1/2 pl-6"
                                 >
-                                  <div className="p-1">
-                                    <div className="aspect-video overflow-hidden rounded-md">
+                                  <div className="p-2">
+                                    <div className="aspect-[4/3] overflow-hidden rounded-md">
                                       <img
                                         src={imageUrl}
                                         alt={`${selectedProject.title} - Image ${index + 1}`}

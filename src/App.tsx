@@ -16,9 +16,10 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
       additionalImages: [
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
+        "/images/PR_aiven_wireframes.png",
+        "/images/PR_aiven_app2.png",
+        "/images/PR-aiven_workshop.png",
+        "/images/PR_aiven_overview.png",
       ],
       tags: [
         "Product design",
@@ -28,20 +29,20 @@ function App() {
         "Leadership and mentoring",
       ],
       description:
-        "UX and Product Design for developer tools—transforming complex technical workflows into intuitive, user-friendly interfaces through research-driven design and close cross-functional collaboration.",
+        "UX and Product Design for developer tools. Transforming complex technical workflows into intuitive, user-friendly interfaces through research-driven design and close cross-functional collaboration.",
       experience:
         "At Aiven I design complex, data-intensive developer products. My role spans from discovery to delivery, including research, benchmarking, workshops, wireframes to high-fidelity designs, and testing. For certain projects I act as a product lead, ensuring alignment across product and engineering. Mentoring and leading new junior designers is also part of my role.",
-      year: "2021-now, Berlin - Aiven",
+      year: "2021-now, Berlin, Aiven",
     },
     {
       id: "2",
       title: "Marketing and Brand Lead",
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
+      image: "/images/PD_branding_thumb.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=80",
-        "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
+        "/images/PR_brand_card.png",
+        "/images/PR_brand_logo.png",
+        "/images/PD-LKzwo-web.png",
+        "/images/PD-brand_legalito.png",
       ],
       tags: [
         "Branding",
@@ -50,14 +51,14 @@ function App() {
         "Organizational Effectiveness",
       ],
       description:
-        "Brand and marketing leadership—developing comprehensive strategies, building brand identities, and creating digital experiences that drive business growth and market presence.",
+        "Brand and marketing leadership. Developing comprehensive strategies, building brand identities, and creating digital experiences that drive business growth and market presence.",
       experience:
         "At LKzwo GmbH, I developed marketing strategies, oversaw content, built brand identities, and designed and developed corporate websites.",
-      year: "2015-2020, Berlin - LKzwo",
+      year: "2015-2020, Berlin, LKzwo",
     },
     {
       id: "3",
-      title: "Service Design Manager",
+      title: "Demand Manager",
       image: "/images/PR_keks_uml_diagram.png",
       additionalImages: [
         "/images/PD-keks-func_specs_b.png",
@@ -66,10 +67,10 @@ function App() {
       ],
       tags: ["Service Design", "Cross-department", "Education Tech", "Kanban"],
       description:
-        "Service design and product ownership in education technology—leading cross-functional teams to develop innovative e-learning solutions through user-centered design and agile methodologies.",
+        "Service design and product ownership in education technology. Working cross-functionaly to develop innovative e-learning solutions through user-centered design and agile methodologies.",
       experience:
         "At Cornelsen Verlag, I developed e-learning tools, including evaluation and training systems. Worked cross-department using both Agile and Waterfall approaches. From persona creation to user testing. I led requirement analysis and created functional specifications/user stories.",
-      year: "2012-2013, Berlin - Cornelsen",
+      year: "2012-2013, Berlin, Cornelsen",
     },
     {
       id: "4",
@@ -86,23 +87,23 @@ function App() {
         "Business process mapping",
         "Stakeholder management",
         "Team leadership",
-        "Product design",
+        "Service design",
       ],
       description:
-        "Senior business analysis and system design—leading large-scale digital transformation projects, stakeholder management, and process optimization for complex organizational workflows.",
+        "Senior business analysis and system design. Leading large-scale digital transformation projects, stakeholder management, and process optimization for complex organizational workflows.",
       experience:
         "At Standards Australia, I led the design of document workflows and knowledge management systems for internal teams and 8,000 external users. I ran stakeholder workshops, mapped and streamlined business processes, established requirements and functional specs, conducted on-site user testing and led the external development team through a two year-long development phase.",
-      year: "2006-2008, Sydney - Standards Australia",
+      year: "2006-2008, Sydney, Standards Australia",
     },
     {
       id: "5",
       title: "Founder & Lead Designer",
-      image: "/images/PR_fashion_store.png",
+      image: "/images/PR_fashion_thumb.png",
       additionalImages: [
         "/images/PR_honeyants_screenprinting.jpeg",
-        "/images/PD_fashion_e-com.png",
+        "/images/PD_honeyants_e-com.png",
         "/images/PR-honeyants-magazine.png",
-        "/images/PD_fashion_fabric.png",
+        "/images/PD_fashion_fabric.jpg",
       ],
       tags: [
         "Sustainable Fashion",
@@ -111,9 +112,9 @@ function App() {
         "E-Commerce",
       ],
       description:
-        "Entrepreneurship and sustainable design—founding and leading a fashion startup from concept to market, combining creative design with ethical business practices and e-commerce innovation.",
+        "Entrepreneurship and sustainable fashion design. Co—founder and Designer of unique childrens clothes. From concept to market, combining creative design with ethical business practices and e-commerce innovation.",
       experience:
-        "Founded Honeyants Pty Ltd, a sustainable children's fashion label. Designed clothing and graphics, managed supply chains, created marketing campaigns, and launched an e-commerce platform.",
+        "Founded Honeyants Pty Ltd, a sustainable children's fashion label. Designed garments, developed print graphics for screen printing, managed supply chains, created brand and marketing campaigns, and launched an e-commerce platform.",
       year: "2008-2010, Sydney Australia",
     },
     {
@@ -128,21 +129,18 @@ function App() {
       ],
       tags: ["UI/UX Design", "Team Leadership", "E-Commerce", "Animation"],
       description:
-        "UI/UX design leadership and team management—driving visual redesign of international e-commerce platforms with focus on user experience optimization and cross-functional collaboration.",
+        "UI/UX design leadership and team management. Driving visual redesign of international e-commerce platforms with focus on user experience optimization and cross-functional collaboration.",
       experience:
         "At Dooyoo AG, an international e-commerce platform I led the visual redesign of the platform, oversaw graphic development and animations and conducted on-site user testing.",
-      year: "2000-2001, Berlin - Dooyoo",
+      year: "2000-2001, Berlin, Dooyoo",
     },
     {
       id: "7",
       title: "Project Manager",
       image:
         "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=80",
-      ],
+      imageStyle: "h-48",
+      additionalImages: ["/images/PR_iso_meeting.jpg", "/images/PR-pm-iso.png"],
       tags: [
         "Project Management",
         "Event Planning",
@@ -150,29 +148,29 @@ function App() {
         "Standards Development",
       ],
       description:
-        "Project management and stakeholder coordination—orchestrating complex multi-stakeholder initiatives, process improvement, and international collaboration in standards development.",
+        "Project management and stakeholder coordination. Orchestrating multi-stakeholder initiatives, process improvement, and international collaboration in standards development.",
       experience:
-        "At Standards Australia, I coordinated national and international meetings and plenary sessions, introduced new improved business workflows, and facilitated standards committee collaborations.",
-      year: "2004-2006, Sydney - Standards Australia",
+        "At Standards Australia, I coordinated national and international meetings and ISO plenary sessions, introduced new improved business workflows, and facilitated standards committee collaborations for the establishment of internaional ISO standards, in the field of MPEG4, accessibility, user interfaces and e-learning.",
+      year: "2004-2006, Sydney, Standards Australia",
     },
     {
       id: "8",
-      title: "Presenter and Storyteller",
+      title: "Product Manager and Facilitator",
       image:
         "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
       additionalImages: [
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
+        "/images/PD_presenter_2.jpg",
+        "/images/PR-PM_workshop.jpg",
       ],
       tags: [
-        "Presenter",
+        "Facilitator",
         "Workshop led",
         "Stakeholder engager",
-        "Story teller",
+        "Presenter",
+        "Product Manager",
       ],
       description:
-        "Strategic communication and stakeholder engagement—driving project success through transparent collaboration, workshop facilitation, and storytelling that aligns teams and delivers results.",
+        "Strategic communication and stakeholder engagement. Driving project success through transparent collaboration, workshop facilitation, and storytelling that aligns teams and delivers results.",
       experience:
         "I take ownership of my projects and actively engage stakeholders to ensure key goals and requirements aren't missed. Through needs and goals workshops, ideation workshops and regular updates, sharing progress, prototypes, and test results. I promote transparency and shared ownership, helping identify pain points, needs, risks, and constraints for greater project success.",
       year: "always",
@@ -188,10 +186,10 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
       additionalImages: [
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
-        "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80",
+        "/images/PD_ai_app.png",
+        "/images/PR_aiven_wireframes.png",
+        "/images/PR_aiven_overview.png",
+        "/images/PR-aivenCRDR.png",
       ],
       tags: [
         "UX design",
@@ -208,7 +206,7 @@ function App() {
           "I led discovery, journey mapping, and benchmarking, utilising both qualitative and quantitative UX research, designed wireframes, prototypes, and high-fidelity designs, and coordinated user testing. Collaborated closely with customers, engineers and product managers throughout the lifecycle.",
         outcomes:
           "Successfully delivered and implemented user-friendly interfaces to complex technical features, reducing user onboarding time and increasing stakeholder alignment.",
-        year: "2023-2025, Berlin - Aiven",
+        year: "2023-2025, Berlin, Aiven",
       },
     },
     {
@@ -217,9 +215,10 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
       additionalImages: [
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-        "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&q=80",
-        "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&q=80",
+        "/images/PD_branding_thumb.jpg",
+        "/images/PD_honeyants_e-com.png",
+        "/images/PD_fashion_e-com.png",
+        "/images/PR_fashion_store.png",
       ],
       tags: [
         "Branding",
@@ -266,7 +265,7 @@ function App() {
     {
       id: "4",
       title: "Sustainable Fashion Design",
-      image: "/images/PD_fashion_thumb.jpg",
+      image: "/images/PD_honeyants_thumb.jpg",
       additionalImages: [
         "/images/PD_fashion_clothes.jpg",
         "/images/PD_fashion_photos.png",
@@ -286,9 +285,9 @@ function App() {
         overview:
           "Co-founded a boutique sustainable children's clothing brand in 2008. From ideation to e-commerce launch.",
         process:
-          "Defined the business model, designed garments, developed print graphics for screen printing, sourced ethical suppliers and manufactures, designed brand, created marketing material and set-up the online shop.",
+          "Designed garments, developed print graphics for screen printing, sourced ethical suppliers and manufactures to produce garments made with certified organic cotton and eco-friendly dyes. Designed brand, created marketing material and set-up the online shop.",
         outcomes:
-          "Gained media coverage for sustainability efforts and unique designs, established repeat customers, and validated a niche product-market fit.",
+          "Gained media coverage for sustainability efforts and unique designs.",
         year: "2008, Syndey Australia",
       },
     },
@@ -385,9 +384,9 @@ function App() {
       description: "Showcase of some of my more artistic side.",
       modalContent: {
         overview:
-          "Throughout my life I have been drawing, painting, photographing, creating videos, crafting ans so on. Here are some samples of this more personal side of me.",
+          "Throughout my life I have been drawing, painting, photographing, creating videos, crafting and so on. Here are some samples of this more personal side of me, from early childhood until recently.",
         process: "creative flow, paitience, trust, failure and trying again",
-        outcomes: "somegreat ans some not so great work",
+        outcomes: "some great and some not so great work",
         year: "1980 to now",
       },
     },
@@ -405,11 +404,11 @@ function App() {
       description: "New learnings in ever-evolving field of AI.",
       modalContent: {
         overview:
-          "Since about 6 month I am focusing my attention on learing about new developments within Generative AI, at work I am working on the an internal AI App solution for out Support team, in my spare time I play around with different AI tools to stay on top of this fast pace emergig field.",
+          "For more than a year I have been focusing on learning about new developments within Generative AI. At my current employer, I am working on an internal AI app solution for our Support team. In my spare time, I explore different AI tools to stay on top of this fast-paced, emerging field.",
         process:
-          "From trial and error I am learning more and more about AI developmnet. As good as an AI tool can be, it still requires the fundamental of product design. Planning, scope, detailed functional specs, look and feel and all the other parts to even get close to making that what you have in mind. So what I know now form a fair bit of back and forth, I would start off differently.",
+          "Through trial and error I continue to deepen my understanding of AI development. No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it often takes significant iteration and refinement before it truly delivers on the vision.",
         outcomes:
-          "continious learnings and this portfolio was developed using the AI tool TempoLabs,",
+          "Ongoing learning journey, with this portfolio developed using various AI tools including TempoLabs, Leonardo.ai, and ChatGPT.",
         year: "Currently in development (Aug 2025)",
       },
     },

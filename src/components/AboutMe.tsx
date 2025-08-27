@@ -92,13 +92,6 @@ const AboutMe = () => {
     },
   ];
 
-  const travelHighlights = [
-    "Exporing hardly touched Machu Picchu",
-    "Skiing in the Swiss alps",
-    "Cultural immersion in Southeast Asia",
-    "Scuba diving in the Great Barrier Reef",
-  ];
-
   const interests = [
     { icon: Camera, label: "Family time" },
     { icon: Palette, label: "Art & Photography" },
@@ -472,66 +465,69 @@ const AboutMe = () => {
                 </div>
               </motion.div>
 
-              {/* Travel Section */}
+              {/* Certificates Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.4 }}
               >
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      className="relative h-full cursor-pointer transition-transform"
-                    >
-                      <img
-                        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80"
-                        alt="Travel"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <div className="flex items-center gap-2 mb-4">
-                          <span className="text-2xl font-bold text-white">
-                            08
-                          </span>
-                          <div className="w-6 h-0.5 bg-white"></div>
-                        </div>
-                        <h3 className="text-xl font-light text-white mb-4 font-satoshi">
-                          ADVENTURES
-                        </h3>
-                        <div className="space-y-2">
-                          {travelHighlights.map((highlight, index) => (
-                            <p key={index} className="text-xs text-white/90">
-                              {highlight}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold mb-4">
-                        Travel adventures
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="grid grid-cols-4 gap-4">
-                      {Array.from({ length: 12 }, (_, i) => (
-                        <div key={i} className="aspect-square">
-                          <img
-                            src={`https://images.unsplash.com/photo-${1506905925346 + i}?w=300&q=80`}
-                            alt={`Travel ${i + 1}`}
-                            className="w-full h-full object-cover rounded-lg"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = `https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&q=80&sig=${i}`;
-                            }}
-                          />
-                        </div>
-                      ))}
+                <div className="bg-gray-900 p-6 h-full">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-2xl font-bold text-white">08</span>
+                    <div className="w-6 h-0.5 bg-white"></div>
+                  </div>
+                  <h3 className="text-xl font-light text-white mb-4 font-satoshi">
+                    CERTIFICATES
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="border-b border-gray-700 pb-3">
+                      <p className="text-xs font-medium text-white">
+                        University of Technology Sydney
+                      </p>
+                      <p className="text-xs text-white/80">
+                        Master, Interactive Multimedia
+                      </p>
+                      <p className="text-xs text-white/60">2003 - 2004</p>
                     </div>
-                  </DialogContent>
-                </Dialog>
+                    <div className="border-b border-gray-700 pb-3">
+                      <p className="text-xs font-medium text-white">
+                        University of Skövde
+                      </p>
+                      <p className="text-xs text-white/80">
+                        Bachelor of Science in Product Development Engineering
+                      </p>
+                      <p className="text-xs text-white/60">1996 - 1999</p>
+                    </div>
+                    <div className="border-b border-gray-700 pb-3">
+                      <p className="text-xs font-medium text-white">
+                        Griffith University
+                      </p>
+                      <p className="text-xs text-white/80">
+                        Intermedia/Multimedia
+                      </p>
+                      <p className="text-xs text-white/60">1999 - 1999</p>
+                    </div>
+                    <div className="border-b border-gray-700 pb-3">
+                      <p className="text-xs font-medium text-white">
+                        SOPHIST GmbH
+                      </p>
+                      <p className="text-xs text-white/80">
+                        Certified Professional for Requirements Engineering
+                        Foundation Level Course
+                      </p>
+                      <p className="text-xs text-white/60">Issued Jul 2012</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-white">
+                        Software Education, Sydney Australia
+                      </p>
+                      <p className="text-xs text-white/80">
+                        Mastering the Requirements Process
+                      </p>
+                      <p className="text-xs text-white/60">Issued Apr 2008</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
 
               {/* Life Beyond Work */}
