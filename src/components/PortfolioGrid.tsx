@@ -135,21 +135,27 @@ const PortfolioGrid = ({
                       className={`w-full object-cover ${
                         selectedProject.id === "7"
                           ? "h-48"
-                          : [
-                                "Branding & Visual Design",
-                                "Marketing and Brand Lead",
-                                "Product Manager and Facilitator",
-                                "Industrial Design",
-                                "Project Manager",
-                              ].includes(selectedProject.title)
-                            ? "h-[400px]"
+                          : selectedProject.title === "Founder & Lead Designer"
+                            ? "h-[340px]"
                             : [
-                                  "Art & Photography",
-                                  "AI Products Design",
-                                  "Senior Product & UX Designer",
+                                  "Branding & Visual Design",
+                                  "Marketing and Brand Lead",
+                                  "Product Manager and Facilitator",
+                                  "Industrial Design",
+                                  "Project Manager",
                                 ].includes(selectedProject.title)
-                              ? "h-[300px]"
-                              : "h-auto"
+                              ? "h-[400px]"
+                              : [
+                                    "Art & Photography",
+                                    "AI Products Design",
+                                    "Senior Product & UX Designer",
+                                  ].includes(selectedProject.title)
+                                ? "h-[300px]"
+                                : "h-auto"
+                      } ${
+                        selectedProject.title === "Art & Photography"
+                          ? "object-bottom"
+                          : ""
                       }`}
                     />
                   </div>

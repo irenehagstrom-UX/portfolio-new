@@ -52,7 +52,7 @@ function App() {
         "Organizational Effectiveness",
       ],
       description:
-        "Brand and marketing leadership. Developing comprehensive strategies, building brand identities, and creating digital experiences that drive business growth and market presence.",
+        "Developing comprehensive strategies, building brand identities, and creating digital experiences.",
       experience:
         "At LKzwo GmbH, I developed marketing strategies, oversaw content, built brand identities, and designed and developed corporate websites.",
       year: "2015-2020, Berlin, LKzwo",
@@ -104,6 +104,7 @@ function App() {
       additionalImages: [
         "/images/PR_honeyants_screenprinting.jpeg",
         "/images/PD_honeyants_e-com.png",
+        "/images/PD_fasion_rack.jpg",
         "/images/PR-honeyants-magazine.png",
         "/images/PD_fashion_fabric.jpg",
       ],
@@ -308,7 +309,7 @@ function App() {
         process:
           "Managed cross-departmental projects, collaborating with stakeholders from diverse educational disciplines to define unified functional specifications. Partnered with graphic designers, software engineers, and Product Owners to ensure design consistency across all fields.",
         outcomes:
-          "The online solution provided an alternative to the CD-ROMs bundled with textbooks, allowing students to enhance their skills through interactive e-learning modules aligned with their school books. This increased student engagement and gave teachers digital content to support their lesson plans. Launched in 2012, it marked Cornelsen's first step toward digital learning, an approach still in use today.",
+          "The online solution provided an alternative to the CD-ROMs bundled with textbooks, allowing students to enhance their skills through interactive e-learning modules aligned with their school books. This increased student engagement and gave teachers digital content to support their lesson plans. Launched in 2012, it marked Cornelsen's first step toward digital learning.",
         year: "2012, Berlin - Cornelsen",
       },
     },
