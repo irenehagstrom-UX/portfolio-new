@@ -16,9 +16,10 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
       additionalImages: [
+        "/images/PR_aiven_live.png",
         "/images/PR_aiven_wireframes.png",
-        "/images/PR_aiven_app2.png",
-        "/images/PR-aiven_workshop.png",
+        "/images/PR_ux_services.png",
+        "/images/PR_aiven_CRDR.png",
         "/images/PR_aiven_overview.png",
       ],
       tags: [
@@ -37,12 +38,12 @@ function App() {
     {
       id: "2",
       title: "Marketing and Brand Lead",
-      image: "/images/PD_branding_thumb.png",
+      image: "/images/PR_brand_lead_thumb.png",
       additionalImages: [
         "/images/PR_brand_card.png",
-        "/images/PR_brand_logo.png",
         "/images/PD-LKzwo-web.png",
         "/images/PD-brand_legalito.png",
+        "/images/PR_brand_logo.png",
       ],
       tags: [
         "Branding",
@@ -64,6 +65,7 @@ function App() {
         "/images/PD-keks-func_specs_b.png",
         "/images/PR-Cornelsen_Func specs.png",
         "/images/PR_keks_uml_diagram.png",
+        "/images/PD-learncoachies-screen.png",
       ],
       tags: ["Service Design", "Cross-department", "Education Tech", "Kanban"],
       description:
@@ -75,12 +77,12 @@ function App() {
     {
       id: "4",
       title: "Senior Business Analyst",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      image: "/images/PD_worfklow.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-        "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80",
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+        "/images/PR-standards_process.png",
+        "/images/PD-stadnard-req.png",
+        "/images/PR-standards.png",
+        "/images/PD_standards_hub-project.jpg",
       ],
       tags: [
         "Business analysis",
@@ -90,9 +92,9 @@ function App() {
         "Service design",
       ],
       description:
-        "Senior business analysis and system design. Leading large-scale digital transformation projects, stakeholder management, and process optimization for complex organizational workflows.",
+        "Senior business analysis and service design. Leading a large-scale digital transformation project, stakeholder management, and process optimization for an organizational workflows.",
       experience:
-        "At Standards Australia, I led the design of document workflows and knowledge management systems for internal teams and 8,000 external users. I ran stakeholder workshops, mapped and streamlined business processes, established requirements and functional specs, conducted on-site user testing and led the external development team through a two year-long development phase.",
+        "At Standards Australia, I worked on the design of document workflow and knowledge management systems for internal teams and 8,000 external users. I ran stakeholder workshops, mapped and streamlined business processes, established requirements and functional specs, conducted on-site user testing and led the external development team through a two year-long development phase.",
       year: "2006-2008, Sydney, Standards Australia",
     },
     {
@@ -118,46 +120,9 @@ function App() {
       year: "2008-2010, Sydney Australia",
     },
     {
-      id: "6",
-      title: "Screen Designer & Team Lead",
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
-      additionalImages: [
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80",
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-      ],
-      tags: ["UI/UX Design", "Team Leadership", "E-Commerce", "Animation"],
-      description:
-        "UI/UX design leadership and team management. Driving visual redesign of international e-commerce platforms with focus on user experience optimization and cross-functional collaboration.",
-      experience:
-        "At Dooyoo AG, an international e-commerce platform I led the visual redesign of the platform, oversaw graphic development and animations and conducted on-site user testing.",
-      year: "2000-2001, Berlin, Dooyoo",
-    },
-    {
-      id: "7",
-      title: "Project Manager",
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
-      imageStyle: "h-48",
-      additionalImages: ["/images/PR_iso_meeting.jpg", "/images/PR-pm-iso.png"],
-      tags: [
-        "Project Management",
-        "Event Planning",
-        "Stakeholder Communication",
-        "Standards Development",
-      ],
-      description:
-        "Project management and stakeholder coordination. Orchestrating multi-stakeholder initiatives, process improvement, and international collaboration in standards development.",
-      experience:
-        "At Standards Australia, I coordinated national and international meetings and ISO plenary sessions, introduced new improved business workflows, and facilitated standards committee collaborations for the establishment of internaional ISO standards, in the field of MPEG4, accessibility, user interfaces and e-learning.",
-      year: "2004-2006, Sydney, Standards Australia",
-    },
-    {
       id: "8",
       title: "Product Manager and Facilitator",
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
+      image: "/images/PR_pm_thumb.png",
       additionalImages: [
         "/images/PD_presenter_2.jpg",
         "/images/PR-PM_workshop.jpg",
@@ -177,18 +142,40 @@ function App() {
       outcomes:
         "97% of projects I have been involved in have been successfully implemented.",
     },
+    {
+      id: "7",
+      title: "Project Manager",
+      image:
+        "https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&q=80",
+      imageStyle: "h-48",
+      additionalImages: [
+        "/images/PR_iso_meeting.jpg",
+        "/images/PR-pm-iso.png",
+        "/images/PR_pm_plan.png",
+      ],
+      tags: [
+        "Project Management",
+        "Event Planning",
+        "Stakeholder Communication",
+        "Standards Development",
+      ],
+      description:
+        "Project management and stakeholder coordination. Orchestrating multi-stakeholder initiatives, process improvement, and international collaboration in standards development.",
+      experience:
+        "At Standards Australia, I coordinated national and international meetings and ISO plenary sessions, introduced new improved business workflows, and facilitated standards committee collaborations for the establishment of internaional ISO standards, in the field of MPEG4, accessibility, user interfaces and e-learning.",
+      year: "2004-2006, Sydney, Standards Australia",
+    },
   ];
 
   const disciplineProjects = [
     {
       id: "1",
       title: "UX & Product Design in Tech",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+      image: "/images/PD_UX_thumb.png",
       additionalImages: [
         "/images/PD_ai_app.png",
         "/images/PR_aiven_wireframes.png",
-        "/images/PR_aiven_overview.png",
+        "/images/PD_ux_journey_2.png",
         "/images/PR-aivenCRDR.png",
       ],
       tags: [
@@ -198,7 +185,7 @@ function App() {
         "Cloud computing",
       ],
       description:
-        "UX and Product Design for developer tools—transforming complex technical workflows into intuitive, user-friendly interfaces through research-driven design and close cross-functional collaboration.",
+        "UX and Product Design for developer tools. Transforming complex technical workflows into intuitive, user-friendly interfaces through research-driven design and close cross-functional collaboration.",
       modalContent: {
         overview:
           "This project showcases my approach to UX and Product Design through work on developer tooling platforms. The projects involved complex user journeys, technical data flows, and the challenge of delivering intuitive designs to technical audiences.",
@@ -212,13 +199,13 @@ function App() {
     {
       id: "2",
       title: "Branding & Visual Design",
-      image:
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
+      image: "/images/PD_branding_thumb.png",
       additionalImages: [
-        "/images/PD_branding_thumb.jpg",
-        "/images/PD_honeyants_e-com.png",
-        "/images/PD_fashion_e-com.png",
-        "/images/PR_fashion_store.png",
+        "/images/PD_visulas_logos.png",
+        "/images/web-2015-Lead.gif",
+        "/images/PD_brand_logos.png",
+        "/images/web-2004-gekolia.gif",
+        "/images/PD-branding-8clflyer.jpg",
       ],
       tags: [
         "Branding",
@@ -242,11 +229,16 @@ function App() {
     {
       id: "3",
       title: "Workflow System Design",
-      image:
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+      image: "/images/PD_worfklow.png",
+      additionalImages: [
+        "/images/PR-standards_process.png",
+        "/images/PR-stadnard-leading.png",
+        "/images/PD-stadnardhub.png",
+        "/images/PD-stadnards-flow.png",
+      ],
       tags: [
         "Project lead",
-        "Workflow design",
+        "Service design",
         "Process improvement",
         "Change management",
       ],
@@ -350,12 +342,13 @@ function App() {
     {
       id: "7",
       title: "Industrial Design",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "images/PD_industrial design.png",
       additionalImages: [
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
-        "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800&q=80",
+        "/images/PD_industrial_reeko.jpg",
+        "/images/PD_industrial_D.png",
+        "/images/PD_industrial_C.png",
+        "/images/PD_industrial_B.png",
+        "/images/PD_industrial_A.png",
       ],
       tags: ["Industrial design", "Sustainable design"],
       description:
@@ -366,25 +359,29 @@ function App() {
         process:
           "With inspiration from nature and beehives, we settled on the hexagon shape, which uses the least amount of material but maximum stability. Its shape also allows for different setups and has a unique and beautiful style compared to most bins.",
         outcomes:
-          "Even if this was only a thesis project, it caught ground. 25 years later similar recycling bins, from different producers, can still be seen throughout public spaces in Sweden. These photos were recently taken from a shopping center and airport.",
+          "Even if this was only a thesis project, it caught ground. 25 years later similar recycling bins, from different producers, can still be seen throughout public spaces in Sweden. These photos were recently taken from a shopping center and Landvetter airport.",
         year: "1999, Stockholm Sweden",
       },
     },
     {
       id: "8",
       title: "Art & Photography",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "/images/PD_arts_tumb.jpg",
       additionalImages: [
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80",
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
-        "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800&q=80",
+        "/images/PD_art_1.jpg",
+        "/images/PD_art_2.jpg",
+        "/images/PD_art_3.jpg",
+        "/images/PD_art_4.jpg",
+        "/images/PD_art_5.jpg",
+        "/images/PD_art_6.jpg",
+        "/images/PD_art_7.jpg",
+        "/images/PD_frames.jpg",
       ],
       tags: ["Drawing", "Acryl painting", "Photography"],
       description: "Showcase of some of my more artistic side.",
       modalContent: {
         overview:
-          "Throughout my life I have been drawing, painting, photographing, creating videos, crafting and so on. Here are some samples of this more personal side of me, from early childhood until recently.",
+          "Throughout my life I have been drawing, painting, photographing, creating videos, crafting and so on. Starting with the sun made in Kindergarten. Here are some sample works, created from the age of age 11 to 27.",
         process: "creative flow, paitience, trust, failure and trying again",
         outcomes: "some great and some not so great work",
         year: "1980 to now",
@@ -396,7 +393,7 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
       additionalImages: [
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+        "/images/PD_ai_app.png",
         "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       ],

@@ -133,7 +133,23 @@ const PortfolioGrid = ({
                       src={selectedProject.image}
                       alt={selectedProject.title}
                       className={`w-full object-cover ${
-                        selectedProject.id === "7" ? "h-48" : "h-auto"
+                        selectedProject.id === "7"
+                          ? "h-48"
+                          : [
+                                "Branding & Visual Design",
+                                "Marketing and Brand Lead",
+                                "Product Manager and Facilitator",
+                                "Industrial Design",
+                                "Project Manager",
+                              ].includes(selectedProject.title)
+                            ? "h-[400px]"
+                            : [
+                                  "Art & Photography",
+                                  "AI Products Design",
+                                  "Senior Product & UX Designer",
+                                ].includes(selectedProject.title)
+                              ? "h-[300px]"
+                              : "h-auto"
                       }`}
                     />
                   </div>
