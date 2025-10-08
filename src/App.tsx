@@ -125,7 +125,7 @@ function App() {
       title: "Product Manager and Facilitator",
       image: "/images/PR_pm_thumb.png",
       additionalImages: [
-        "/images/PD_presenter_2.jpg",
+        "/images/AIVEN_25APRIL_stage.jpg",
         "/images/PR-PM_workshop.jpg",
       ],
       tags: [
@@ -202,11 +202,12 @@ function App() {
       title: "Branding & Visual Design",
       image: "/images/PD_branding_thumb.png",
       additionalImages: [
-        "/images/PD_visulas_logos.png",
         "/images/web-2015-Lead.gif",
-        "/images/PD_brand_logos.png",
+        "/images/8cl_werbung2.jpg",
+        "/images/logos.png",
         "/images/web-2004-gekolia.gif",
-        "/images/PD-branding-8clflyer.jpg",
+        "/images/PD_brand_logos.png",
+        "/images/lkzwo karten.jpg",
       ],
       tags: [
         "Branding",
@@ -397,6 +398,10 @@ function App() {
         "/images/PD_ai_app.png",
         "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+        "/images/PD_crabline.png",
+        "/images/PD_kapa.png",
+        "/images/PD_celtic_edit.png",
+        "/images/PD_celtic-resources.png",
       ],
       tags: ["AI creative tools", "App deployment design"],
       description: "New learnings in ever-evolving field of AI.",
@@ -510,35 +515,9 @@ function App() {
 
         {/* Footer */}
         {showNavigation && (
-          <footer className="bg-black/30 py-8">
+          <footer className="py-6">
             <div className="container mx-auto px-4 text-center">
-              <div className="flex justify-center space-x-4 mt-4 text-white/80 drop-shadow-md">
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-primary transition-colors drop-shadow-md"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-primary transition-colors drop-shadow-md"
-                >
-                  Twitter
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-primary transition-colors drop-shadow-md"
-                >
-                  Dribbble
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-primary transition-colors drop-shadow-md"
-                >
-                  Behance
-                </a>
-              </div>
-              <p className="text-white/80 drop-shadow-md text-xs mt-4">
+              <p className="text-white/80 drop-shadow-md text-xs mt-3">
                 © 2025 Irene Hagström Portfolio. All rights reserved.
               </p>
             </div>

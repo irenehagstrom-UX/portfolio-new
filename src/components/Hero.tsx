@@ -7,8 +7,6 @@ interface Particle {
   id: number;
   x: number;
   y: number;
-  angle: number;
-  speed: number;
   size: number;
   opacity: number;
 }
@@ -30,47 +28,32 @@ const Hero = ({
 }: HeroProps) => {
   const [particles, setParticles] = useState<Particle[]>([]);
 
-  const createParticle = useCallback(
-    (x: number, y: number, id: number) => ({
-      id,
-      x,
-      y,
-      angle: Math.random() * Math.PI * 2,
-      speed: Math.random() * 0.8 + 0.4,
-      size: Math.random() * 6 + 3,
-      opacity: Math.random() * 0.8 + 0.3,
-    }),
-    [],
-  );
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-  const emitParticles = useCallback(
-    (x: number, y: number) => {
-      const newParticles = Array.from({ length: 3 }, (_, i) =>
-        createParticle(x, y, Date.now() + i),
-      );
-      setParticles((prev) => [...prev, ...newParticles]);
-
-      setTimeout(() => {
-        setParticles((prev) =>
-          prev.filter((p) => !newParticles.find((np) => np.id === p.id)),
-        );
-      }, 1500);
-    },
-    [createParticle],
-  );
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (Math.random() > 0.8) {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      emitParticles(x, y);
+    // Create new particles
+    const newParticles: Particle[] = [];
+    for (let i = 0; i < 3; i++) {
+      newParticles.push({
+        id: Date.now() + Math.random(),
+        x: x + (Math.random() - 0.5) * 20,
+        y: y + (Math.random() - 0.5) * 20,
+        size: Math.random() * 8 + 12, // Larger size: 12-20px
+        opacity: Math.random() * 0.8 + 0.2,
+      });
     }
-  };
+
+    setParticles((prev) => {
+      const filtered = prev.filter((p) => Date.now() - p.id < 2000); // 2 seconds cleanup
+      return [...filtered, ...newParticles].slice(-30); // Max 30 stars
+    });
+  }, []);
 
   return (
     <section
-      className="relative w-full min-h-[600px] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black/70 overflow-hidden"
+      className="relative w-full min-h-[750px] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black/70 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -136,62 +119,54 @@ const Hero = ({
           </div>
         </motion.div>
       </div>
-      {/* Sparkling Stars Effect */}
+
+      {/* Particle System */}
       <AnimatePresence>
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
             className="absolute pointer-events-none"
-            initial={{
-              x: particle.x - particle.size / 2,
-              y: particle.y - particle.size / 2,
-              scale: 0,
-              opacity: particle.opacity,
-              rotate: 0,
-            }}
-            animate={{
-              x:
-                particle.x +
-                Math.cos(particle.angle) * 80 * particle.speed -
-                particle.size / 2,
-              y:
-                particle.y +
-                Math.sin(particle.angle) * 80 * particle.speed -
-                particle.size / 2,
-              scale: [0, 1.2, 0.8, 1.5, 0],
-              opacity: [particle.opacity, 1, 0.9, 1, 0],
-              rotate: 360,
-            }}
-            exit={{ opacity: 0, scale: 0 }}
-            transition={{
-              duration: 1.5,
-              ease: "easeOut",
-              scale: {
-                times: [0, 0.3, 0.6, 0.8, 1],
-                duration: 1.5,
-              },
-              opacity: {
-                times: [0, 0.3, 0.6, 0.8, 1],
-                duration: 1.5,
-              },
-            }}
             style={{
+              left: particle.x,
+              top: particle.y,
               width: particle.size,
               height: particle.size,
             }}
+            initial={{ opacity: particle.opacity, scale: 0 }}
+            animate={{
+              opacity: 0,
+              scale: 1,
+              y: particle.y - 50,
+              x: particle.x + (Math.random() - 0.5) * 30,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: "easeOut" }} // 2 seconds duration
           >
-            <div
-              className="w-full h-full relative"
-              style={{
-                background: `radial-gradient(circle, #ffffff 30%, #7bd1de 60%, transparent 80%)`,
-                clipPath:
-                  "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                filter: "drop-shadow(0 0 4px rgba(123, 209, 222, 0.8))",
-              }}
-            />
+            {/* Star Shape */}
+            <svg
+              width={particle.size}
+              height={particle.size}
+              viewBox="0 0 24 24"
+              className="animate-pulse"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                fill="#F4C56D"
+                stroke="#FFFFFF"
+                strokeWidth="1"
+                className="drop-shadow-lg"
+              />
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                fill="#FFFFFF"
+                opacity="0.6"
+                className="animate-ping"
+              />
+            </svg>
           </motion.div>
         ))}
       </AnimatePresence>
+
       <motion.div
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
         initial={{ opacity: 0, y: 20 }}
