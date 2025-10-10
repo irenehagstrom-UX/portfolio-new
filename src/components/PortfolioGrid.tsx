@@ -60,13 +60,13 @@ const PortfolioGrid = ({
   };
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-black/30">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-light text-white mb-4 font-satoshi">
+          <h2 className="text-3xl font-light text-gray-800 mb-4 font-satoshi">
             {title}
           </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {description}
           </p>
         </div>
@@ -113,10 +113,10 @@ const PortfolioGrid = ({
         </div>
 
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+          <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white border-0">
             {selectedProject && (
               <>
-                <DialogHeader>
+                <DialogHeader className="bg-white">
                   <DialogTitle className="text-2xl font-light font-satoshi">
                     {selectedProject.title}
                   </DialogTitle>

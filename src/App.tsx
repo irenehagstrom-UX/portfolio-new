@@ -1,12 +1,17 @@
-import { Suspense } from "react";
-import { useRoutes, Routes, Route, useNavigate } from "react-router-dom";
+import { Suspense, useState } from "react";
+import { useRoutes, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Home from "./components/home";
 import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
+import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
+import AnimationControls from "./components/AnimationControls";
 import routes from "tempo-routes";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [animationSpeed, setAnimationSpeed] = useState(50);
+  const [movementIntensity, setMovementIntensity] = useState(30);
 
   // Sample data for portfolio items
   const experienceProjects = [
@@ -418,17 +423,26 @@ function App() {
   ];
 
   const showNavigation = true;
+  const isHomePage = location.pathname === '/';
 
   return (
-    <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/images/background_b.jpg)" }}
+    <div className="min-h-screen relative bg-white">
+      {/* Animated Floral Background */}
+      <AnimatedFloralBackground
+        animationSpeed={animationSpeed / 25}
+        movementIntensity={movementIntensity / 25}
+        className="fixed inset-0 z-0"
+      />
+      
+      {/* Animation Controls - Only on home page */}
+      {isHomePage && (
+        <AnimationControls
+          speed={animationSpeed}
+          intensity={movementIntensity}
+          onSpeedChange={setAnimationSpeed}
+          onIntensityChange={setMovementIntensity}
         />
-        <div className="absolute inset-0 bg-black/20" />
-      </div>
+      )}
 
       {/* Content */}
       <div className="relative z-10 min-h-screen overflow-y-auto">
@@ -436,14 +450,14 @@ function App() {
         {showNavigation && (
           <header className="container mx-auto px-4 py-6">
             <nav className="flex justify-between items-center">
-              <div className="text-lg font-normal text-white drop-shadow-lg flex font-satoshi">
+              <div className="text-lg font-normal text-gray-800 flex font-satoshi">
                 Portfolio of Irene Hagström
               </div>
               <ul className="flex space-x-6 h-[30px]">
                 <li>
                   <button
                     onClick={() => navigate("/")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
+                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
                   >
                     Home
                   </button>
@@ -451,7 +465,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/roles")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
+                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
                   >
                     Roles
                   </button>
@@ -459,7 +473,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/discipline")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
+                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
                   >
                     Discipline
                   </button>
@@ -467,7 +481,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/about-me")}
-                    className="text-white hover:text-primary transition-colors drop-shadow-md font-satoshi"
+                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
                   >
                     About
                   </button>
@@ -477,7 +491,7 @@ function App() {
           </header>
         )}
 
-        <Suspense fallback={<p className="text-white p-4">Loading...</p>}>
+        <Suspense fallback={<p className="text-gray-800 p-4">Loading...</p>}>
           <>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -517,7 +531,7 @@ function App() {
         {showNavigation && (
           <footer className="py-6">
             <div className="container mx-auto px-4 text-center">
-              <p className="text-white/80 drop-shadow-md text-xs mt-3">
+              <p className="text-gray-600 text-xs mt-3">
                 © 2025 Irene Hagström Portfolio. All rights reserved.
               </p>
             </div>

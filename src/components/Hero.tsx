@@ -53,7 +53,7 @@ const Hero = ({
 
   return (
     <section
-      className="relative w-full min-h-[750px] flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black/70 overflow-hidden"
+      className="relative w-full min-h-[750px] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -62,13 +62,13 @@ const Hero = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-white drop-shadow-lg font-satoshi">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-gray-800 font-satoshi drop-shadow-lg">
             {name}
           </h1>
-          <h2 className="text-2xl sm:text-3xl font-medium text-white mb-6 drop-shadow-lg font-satoshi">
+          <h2 className="text-2xl sm:text-3xl font-medium text-gray-700 mb-6 font-satoshi drop-shadow-md">
             {headline}
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto mb-10 drop-shadow-md">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 drop-shadow-md">
             {description}
           </p>
 
@@ -102,20 +102,6 @@ const Hero = ({
                 </Button>
               </motion.div>
             </div>
-
-            {/* Circle Button */}
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-4"
-            >
-              <button
-                onClick={() => console.log("Circle button clicked")}
-                className="w-16 h-16 rounded-full bg-[#F4C56D] hover:bg-[#7bd1de] transition-colors duration-300 shadow-lg flex items-center justify-center group"
-              >
-                <ArrowRight className="h-6 w-6 text-black transition-transform group-hover:rotate-45" />
-              </button>
-            </motion.div>
           </div>
         </motion.div>
       </div>
@@ -152,13 +138,13 @@ const Hero = ({
               <path
                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
                 fill="#F4C56D"
-                stroke="#FFFFFF"
+                stroke="#CCCCCC"
                 strokeWidth="1"
                 className="drop-shadow-lg"
               />
               <path
                 d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                fill="#FFFFFF"
+                fill="#CCCCCC"
                 opacity="0.6"
                 className="animate-ping"
               />
