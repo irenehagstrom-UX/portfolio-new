@@ -9,6 +9,10 @@ interface Particle {
   y: number;
   size: number;
   opacity: number;
+  color: {
+    petal: string;
+    center: string;
+  };
 }
 
 interface HeroProps {
@@ -35,18 +39,26 @@ const Hero = ({
 
     // Create new particles
     const newParticles: Particle[] = [];
+    const colors = [
+      { petal: "rgba(255, 160, 180, 0.8)", center: "rgba(255, 255, 180, 0.9)" }, // Pink
+      { petal: "rgba(255, 255, 150, 0.8)", center: "rgba(255, 200, 100, 0.9)" }, // Yellow
+      { petal: "rgba(150, 180, 255, 0.8)", center: "rgba(255, 255, 180, 0.9)" }, // Blue
+    ];
+
     for (let i = 0; i < 3; i++) {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
       newParticles.push({
         id: Date.now() + Math.random(),
         x: x + (Math.random() - 0.5) * 20,
         y: y + (Math.random() - 0.5) * 20,
-        size: Math.random() * 8 + 12, // Larger size: 12-20px
+        size: Math.random() * 16 + 24, // Double size: 24-40px
         opacity: Math.random() * 0.8 + 0.2,
+        color: randomColor,
       });
     }
 
     setParticles((prev) => {
-      const filtered = prev.filter((p) => Date.now() - p.id < 2000); // 2 seconds cleanup
+      const filtered = prev.filter((p) => Date.now() - p.id < 4000); // 4 seconds cleanup
       return [...filtered, ...newParticles].slice(-30); // Max 30 stars
     });
   }, []);
@@ -56,19 +68,19 @@ const Hero = ({
       className="relative w-full min-h-[750px] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-gray-800 font-satoshi drop-shadow-lg">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-[hsl(340,30%,80%)] font-satoshi drop-shadow-lg">
             {name}
           </h1>
-          <h2 className="text-2xl sm:text-3xl font-medium text-gray-700 mb-6 font-satoshi drop-shadow-md">
+          <h2 className="text-2xl sm:text-3xl font-medium text-[hsl(340,30%,80%)] mb-6 font-satoshi drop-shadow-md">
             {headline}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10 drop-shadow-md">
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10 drop-shadow-md">
             {description}
           </p>
 
@@ -81,7 +93,7 @@ const Hero = ({
                 <Button
                   size="lg"
                   onClick={onExperienceClick}
-                  className="min-w-[220px] group bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none"
+                  className="min-w-[220px] group bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none font-bold"
                 >
                   Browse by Role
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -95,7 +107,7 @@ const Hero = ({
                 <Button
                   size="lg"
                   onClick={onDisciplineClick}
-                  className="min-w-[220px] group bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none"
+                  className="min-w-[220px] group bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none font-bold"
                 >
                   Browse by Discipline
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -126,27 +138,34 @@ const Hero = ({
               x: particle.x + (Math.random() - 0.5) * 30,
             }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 2, ease: "easeOut" }} // 2 seconds duration
+            transition={{ duration: 4, ease: "easeOut" }} // 4 seconds duration - slower animation
           >
-            {/* Star Shape */}
+            {/* Flower Shape - matching background flowers */}
             <svg
               width={particle.size}
               height={particle.size}
-              viewBox="0 0 24 24"
+              viewBox="0 0 100 100"
               className="animate-pulse"
+              style={{ transform: `rotate(${Math.random() * 360}deg)` }}
             >
-              <path
-                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                fill="#F4C56D"
-                stroke="#CCCCCC"
-                strokeWidth="1"
-                className="drop-shadow-lg"
-              />
-              <path
-                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                fill="#CCCCCC"
-                opacity="0.6"
-                className="animate-ping"
+              {/* Draw 6 petals */}
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <ellipse
+                  key={i}
+                  cx="50"
+                  cy="20"
+                  rx="15"
+                  ry="30"
+                  fill={particle.color.petal}
+                  transform={`rotate(${i * 60} 50 50)`}
+                />
+              ))}
+              {/* Center of flower */}
+              <circle
+                cx="50"
+                cy="50"
+                r="10"
+                fill={particle.color.center}
               />
             </svg>
           </motion.div>

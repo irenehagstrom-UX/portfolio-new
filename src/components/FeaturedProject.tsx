@@ -45,8 +45,8 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-12 px-4 bg-background">
-      <h2 className="text-3xl font-bold mb-8 text-center">Featured Project</h2>
+    <div className="w-full max-w-6xl mx-auto py-12 px-4 bg-[#1a1a1a]">
+      <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Featured Project</h2>
 
       <motion.div
         whileHover={{ scale: 1.02 }}
@@ -54,7 +54,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
         className="cursor-pointer"
         onClick={() => setIsModalOpen(true)}
       >
-        <Card className="overflow-hidden border-0 shadow-lg">
+        <Card className="overflow-hidden border-0 shadow-lg bg-[#2a2a2a]">
           <div className="relative aspect-video overflow-hidden">
             <img
               src={imageUrl}
@@ -65,17 +65,17 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           <CardContent className="p-6">
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="text-2xl font-bold mb-2">{title}</h3>
-                <p className="text-muted-foreground mb-4">{description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-gray-100">{title}</h3>
+                <p className="text-gray-400 mb-4">{description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {tags.map((tag) => (
-                    <Badge key={tag.id} variant="secondary">
+                    <Badge key={tag.id} variant="secondary" className="bg-[#3a3a3a] text-gray-300">
                       {tag.name}
                     </Badge>
                   ))}
                 </div>
               </div>
-              <Button variant="ghost" size="icon" className="mt-1">
+              <Button variant="ghost" size="icon" className="mt-1 text-gray-300 hover:text-gray-100">
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </div>
@@ -84,10 +84,10 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
       </motion.div>
 
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-[#2a2a2a] border-4 border-border">
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold">{title}</DialogTitle>
-            <DialogDescription className="text-base">
+            <DialogTitle className="text-2xl font-bold text-gray-100">{title}</DialogTitle>
+            <DialogDescription className="text-base text-gray-300">
               {description}
             </DialogDescription>
           </DialogHeader>
@@ -95,7 +95,7 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
           <div className="mt-6">
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag) => (
-                <Badge key={tag.id} variant="secondary">
+                <Badge key={tag.id} variant="secondary" className="bg-[#3a3a3a] text-gray-300">
                   {tag.name}
                 </Badge>
               ))}
@@ -105,15 +105,15 @@ const FeaturedProject: React.FC<FeaturedProjectProps> = ({
               <img
                 src={imageUrl}
                 alt={title}
-                className="w-full h-auto rounded-md mb-6"
+                className="w-full h-auto rounded-md mb-6 border border-gray-400"
               />
-              <p className="text-foreground">{detailedDescription}</p>
+              <p className="text-gray-300">{detailedDescription}</p>
             </div>
 
             {additionalImages && additionalImages.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                 {additionalImages.map((img, index) => (
-                  <div key={index} className="rounded-md overflow-hidden">
+                  <div key={index} className="rounded-md overflow-hidden border border-gray-400">
                     <img
                       src={img}
                       alt={`${title} - Image ${index + 1}`}

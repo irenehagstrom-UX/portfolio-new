@@ -1,5 +1,12 @@
 import { Suspense, useState } from "react";
-import { useRoutes, Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import {
+  useRoutes,
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+import { Mail, Linkedin, Download } from "lucide-react";
 import Home from "./components/home";
 import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
@@ -179,7 +186,7 @@ function App() {
       title: "UX & Product Design in Tech",
       image: "/images/PD_UX_thumb.png",
       additionalImages: [
-        "/images/PD_ai_app.png",
+        "/images/PD_celtic_edit.png",
         "/images/PR_aiven_wireframes.png",
         "/images/PD_ux_journey_2.png",
         "/images/PR-aivenCRDR.png",
@@ -397,43 +404,40 @@ function App() {
     {
       id: "9",
       title: "AI Product Design",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
+      image: "/images/PD_ai_thumb.png",
       additionalImages: [
-        "/images/PD_ai_app.png",
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-        "/images/PD_crabline.png",
-        "/images/PD_kapa.png",
         "/images/PD_celtic_edit.png",
         "/images/PD_celtic-resources.png",
+        "/images/PD_crabline.png",
+        "/images/PD_kapa.png",
+        "/images/PD_ai_app.png",
       ],
-      tags: ["AI creative tools", "App deployment design"],
+      tags: ["AI creative tools", "App deployment design", "Context Design"],
       description: "New learnings in ever-evolving field of AI.",
       modalContent: {
         overview:
-          "For more than a year I have been focusing on learning about new developments within Generative AI. At my current employer, I am working on an internal AI app solution for our Support team. In my spare time, I explore different AI tools to stay on top of this fast-paced, emerging field.",
+          "For more than two years I have been focusing on learning about new developments within Generative AI. In my current role, I have been involved in several AI realted project, currently working on an internal AI app solution for our Support team.",
         process:
-          "Through trial and error I continue to deepen my understanding of AI development. No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it often takes significant iteration and refinement before it truly delivers on the vision.",
+          "No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it still requires proper context, guidance, and detailed requirements for the outcomes to be successful.",
         outcomes:
-          "Ongoing learning journey, with this portfolio developed using various AI tools including TempoLabs, Leonardo.ai, and ChatGPT.",
+          "It's an ongoing learning journey, looking at understaning aoverall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
         year: "Currently in development (Aug 2025)",
       },
     },
   ];
 
   const showNavigation = true;
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   return (
-    <div className="min-h-screen relative bg-white">
+    <div className="min-h-screen relative bg-black">
       {/* Animated Floral Background */}
       <AnimatedFloralBackground
         animationSpeed={animationSpeed / 25}
         movementIntensity={movementIntensity / 25}
         className="fixed inset-0 z-0"
       />
-      
+
       {/* Animation Controls - Only on home page */}
       {isHomePage && (
         <AnimationControls
@@ -449,15 +453,12 @@ function App() {
         {/* Navigation */}
         {showNavigation && (
           <header className="container mx-auto px-4 py-6">
-            <nav className="flex justify-between items-center">
-              <div className="text-lg font-normal text-gray-800 flex font-satoshi">
-                Portfolio of Irene Hagström
-              </div>
+            <nav className="flex justify-end items-center">
               <ul className="flex space-x-6 h-[30px]">
                 <li>
                   <button
                     onClick={() => navigate("/")}
-                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
+                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Home
                   </button>
@@ -465,7 +466,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/roles")}
-                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
+                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Roles
                   </button>
@@ -473,7 +474,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/discipline")}
-                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
+                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Discipline
                   </button>
@@ -481,7 +482,7 @@ function App() {
                 <li>
                   <button
                     onClick={() => navigate("/about-me")}
-                    className="text-gray-800 hover:text-primary transition-colors font-satoshi"
+                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     About
                   </button>
@@ -491,7 +492,7 @@ function App() {
           </header>
         )}
 
-        <Suspense fallback={<p className="text-gray-800 p-4">Loading...</p>}>
+        <Suspense fallback={<p className="text-gray-200 p-4">Loading...</p>}>
           <>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -531,9 +532,35 @@ function App() {
         {showNavigation && (
           <footer className="py-6">
             <div className="container mx-auto px-4 text-center">
-              <p className="text-gray-600 text-xs mt-3">
+              <p className="text-gray-400 text-xs mt-3">
                 © 2025 Irene Hagström Portfolio. All rights reserved.
               </p>
+              <div className="flex justify-center items-center gap-4 mt-4">
+                <a
+                  href="mailto:your.email@example.com"
+                  className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
+                >
+                  <Mail className="w-3 h-3" />
+                  Email me
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/yourprofile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
+                >
+                  <Linkedin className="w-3 h-3" />
+                  LinkedIn profile
+                </a>
+                <a
+                  href="/path-to-resume.pdf"
+                  download
+                  className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
+                >
+                  <Download className="w-3 h-3" />
+                  Download Resume
+                </a>
+              </div>
             </div>
           </footer>
         )}

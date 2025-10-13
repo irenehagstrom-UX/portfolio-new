@@ -60,13 +60,13 @@ const PortfolioGrid = ({
   };
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-light text-gray-800 mb-4 font-satoshi">
+          <h2 className="text-3xl font-light text-gray-100 mb-4 font-satoshi">
             {title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             {description}
           </p>
         </div>
@@ -80,7 +80,7 @@ const PortfolioGrid = ({
               className="cursor-pointer"
               onClick={() => handleProjectClick(project)}
             >
-              <Card className="h-full overflow-hidden border-4 border-border hover:shadow-lg transition-shadow duration-300">
+              <Card className="h-full overflow-hidden border-4 border-border hover:shadow-lg transition-shadow duration-300 bg-[#2a2a2a]">
                 <div className="aspect-video w-full overflow-hidden">
                   <img
                     src={project.image}
@@ -89,10 +89,10 @@ const PortfolioGrid = ({
                   />
                 </div>
                 <CardContent className="p-5">
-                  <h3 className="text-xl font-light mb-2 font-satoshi">
+                  <h3 className="text-xl font-light mb-2 font-satoshi text-gray-100">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-4">
+                  <p className="text-gray-400 text-sm mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ const PortfolioGrid = ({
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="bg-[#d7edf0] text-[#767676] hover:bg-[#d7edf0] cursor-default"
+                        className="bg-[#3a3a3a] text-gray-300 hover:bg-[#3a3a3a] cursor-default"
                       >
                         {tag}
                       </Badge>
@@ -113,30 +113,30 @@ const PortfolioGrid = ({
         </div>
 
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-white border-0">
+          <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-[#2a2a2a] border-4 border-border shadow-none rounded-none">
             {selectedProject && (
               <>
-                <DialogHeader className="bg-white">
-                  <DialogTitle className="text-2xl font-light font-satoshi">
+                <DialogHeader className="bg-[#2a2a2a]">
+                  <DialogTitle className="text-2xl font-light font-satoshi text-gray-100">
                     {selectedProject.title}
                   </DialogTitle>
                   {type === "experience" && (
-                    <DialogDescription className="text-base">
+                    <DialogDescription className="text-base text-gray-300">
                       {selectedProject.description}
                     </DialogDescription>
                   )}
                 </DialogHeader>
 
                 <div className="mt-6">
-                  <div className="rounded-md overflow-hidden mb-6">
+                  <div className="rounded-md overflow-hidden mb-6 border border-gray-400">
                     <img
                       src={selectedProject.image}
                       alt={selectedProject.title}
-                      className={`w-full object-cover ${
+                      className={`w-full ${
                         selectedProject.id === "7"
-                          ? "h-48"
+                          ? "h-48 object-cover"
                           : selectedProject.title === "Founder & Lead Designer"
-                            ? "h-[340px]"
+                            ? "h-[340px] object-cover"
                             : [
                                   "Branding & Visual Design",
                                   "Marketing and Brand Lead",
@@ -144,18 +144,20 @@ const PortfolioGrid = ({
                                   "Industrial Design",
                                   "Project Manager",
                                 ].includes(selectedProject.title)
-                              ? "h-[400px]"
+                              ? "h-[400px] object-cover"
                               : [
                                     "Art & Photography",
-                                    "AI Products Design",
                                     "Senior Product & UX Designer",
                                   ].includes(selectedProject.title)
-                                ? "h-[300px]"
-                                : "h-auto"
-                      } ${
-                        selectedProject.title === "Art & Photography"
-                          ? "object-bottom"
-                          : ""
+                                ? "h-[300px] object-cover object-bottom"
+                                : selectedProject.title === "AI Product Design"
+                                  ? "h-[350px] object-cover object-top"
+                                  : [
+                                        "EdTech Evaluation Tool Design",
+                                        "Sustainable Fashion Design",
+                                      ].includes(selectedProject.title)
+                                    ? "h-[350px] object-cover object-center"
+                                    : "h-auto object-cover"
                       }`}
                     />
                   </div>
@@ -164,10 +166,10 @@ const PortfolioGrid = ({
                     <div className="space-y-6">
                       {selectedProject.modalContent.overview && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Overview
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.modalContent.overview}
                           </p>
                         </div>
@@ -175,10 +177,10 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.process && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Process
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.modalContent.process}
                           </p>
                         </div>
@@ -186,10 +188,10 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.outcomes && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Outcomes
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.modalContent.outcomes}
                           </p>
                         </div>
@@ -197,10 +199,10 @@ const PortfolioGrid = ({
 
                       {selectedProject.modalContent.year && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Production year
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.modalContent.year}
                           </p>
                         </div>
@@ -210,10 +212,10 @@ const PortfolioGrid = ({
                     <div className="space-y-6">
                       {selectedProject.experience && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Experience
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.experience}
                           </p>
                         </div>
@@ -221,10 +223,10 @@ const PortfolioGrid = ({
 
                       {selectedProject.year && (
                         <div>
-                          <h3 className="text-lg font-light mb-2 font-satoshi">
+                          <h3 className="text-lg font-light mb-2 font-satoshi text-gray-100">
                             Year
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.year}
                           </p>
                         </div>
@@ -232,10 +234,10 @@ const PortfolioGrid = ({
 
                       {selectedProject.outcomes && (
                         <div>
-                          <h3 className="text-lg font-medium mb-2 font-satoshi">
+                          <h3 className="text-lg font-medium mb-2 font-satoshi text-gray-100">
                             Outcomes
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-gray-300">
                             {selectedProject.outcomes}
                           </p>
                         </div>
@@ -245,7 +247,7 @@ const PortfolioGrid = ({
 
                   <div className="flex flex-wrap gap-2 mt-6">
                     {selectedProject.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline">
+                      <Badge key={index} variant="outline" className="border-gray-500 text-gray-300">
                         {tag}
                       </Badge>
                     ))}
@@ -264,7 +266,7 @@ const PortfolioGrid = ({
                                   className="md:basis-1/2 pl-6"
                                 >
                                   <div className="p-2">
-                                    <div className="aspect-[4/3] overflow-hidden rounded-md">
+                                    <div className="aspect-[4/3] overflow-hidden rounded-md border border-gray-400">
                                       <img
                                         src={imageUrl}
                                         alt={`${selectedProject.title} - Image ${index + 1}`}
@@ -276,8 +278,8 @@ const PortfolioGrid = ({
                               ),
                             )}
                           </CarouselContent>
-                          <CarouselPrevious />
-                          <CarouselNext />
+                          <CarouselPrevious className="bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none" />
+                          <CarouselNext className="bg-[#7bd1de] hover:bg-[#F4C56D] text-black border-none" />
                         </Carousel>
                       </div>
                     )}
