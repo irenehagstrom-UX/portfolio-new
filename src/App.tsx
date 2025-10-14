@@ -14,11 +14,9 @@ import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
 import AnimationControls from "./components/AnimationControls";
 
 // Conditionally import tempo-routes only in development
-let routes: any[] = [];
-if (import.meta.env.VITE_TEMPO === "true") {
-  const tempoRoutes = await import("tempo-routes");
-  routes = tempoRoutes.default;
-}
+const routes = import.meta.env.VITE_TEMPO === "true" 
+  ? (await import("tempo-routes")).default 
+  : [];
 
 function App() {
   const navigate = useNavigate();
@@ -530,7 +528,6 @@ function App() {
                 }
               />
             </Routes>
-            {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
           </>
         </Suspense>
 
