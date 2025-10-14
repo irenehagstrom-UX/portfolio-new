@@ -413,7 +413,7 @@ function App() {
         process:
           "No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it still requires proper context, guidance, and detailed requirements for the outcomes to be successful.",
         outcomes:
-          "As in any field it's an ongoing learning journey. I am looking at understaning overall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
+          "TEST As in any field it's an ongoing learning journey. I am looking at understaning overall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
         year: "First deployment Aug 2025- ongoing development.",
       },
     },
