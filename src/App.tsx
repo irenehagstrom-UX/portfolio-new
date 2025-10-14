@@ -12,13 +12,19 @@ import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
 import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
 import AnimationControls from "./components/AnimationControls";
-import routes from "tempo-routes";
+
+// Conditionally import tempo-routes only in development
+let routes: any[] = [];
+if (import.meta.env.VITE_TEMPO === "true") {
+  const tempoRoutes = await import("tempo-routes");
+  routes = tempoRoutes.default;
+}
 
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [animationSpeed, setAnimationSpeed] = useState(50);
-  const [movementIntensity, setMovementIntensity] = useState(30);
+  const [animationSpeed, setAnimationSpeed] = useState(10);
+  const [movementIntensity, setMovementIntensity] = useState(10);
 
   // Sample data for portfolio items
   const experienceProjects = [
@@ -433,8 +439,8 @@ function App() {
     <div className="min-h-screen relative bg-black">
       {/* Animated Floral Background */}
       <AnimatedFloralBackground
-        animationSpeed={animationSpeed / 25}
-        movementIntensity={movementIntensity / 25}
+        animationSpeed={animationSpeed / 100}
+        movementIntensity={movementIntensity / 100}
         className="fixed inset-0 z-0"
       />
 

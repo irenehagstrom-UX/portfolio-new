@@ -7,8 +7,8 @@ interface AnimatedFloralBackgroundProps {
 }
 
 const AnimatedFloralBackground: React.FC<AnimatedFloralBackgroundProps> = ({
-  animationSpeed = 1,
-  movementIntensity = 0.5,
+  animationSpeed = 0.1,
+  movementIntensity = 0.1,
   className = "",
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
