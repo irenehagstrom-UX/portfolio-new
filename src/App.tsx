@@ -1,10 +1,5 @@
 import { Suspense, useState } from "react";
-import {
-  Routes,
-  Route,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { Mail, Linkedin, Download } from "lucide-react";
 import Home from "./components/home";
 import AboutMe from "./components/AboutMe";
@@ -418,8 +413,8 @@ function App() {
         process:
           "No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it still requires proper context, guidance, and detailed requirements for the outcomes to be successful.",
         outcomes:
-          "It's an ongoing learning journey, looking at understaning aoverall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
-        year: "Currently in development (Aug 2025)",
+          "As in any field it's an ongoing learning journey. I am looking at understaning overall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
+        year: "First deployment Aug 2025- ongoing development.",
       },
     },
   ];

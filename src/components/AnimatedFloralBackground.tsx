@@ -32,11 +32,11 @@ const AnimatedFloralBackground: React.FC<AnimatedFloralBackgroundProps> = ({
 
     // Flower colors
     const colors = [
-      "rgba(255, 160, 180, 0.6)", // pink
-      "rgba(150, 200, 220, 0.6)", // blue
-      "rgba(255, 200, 160, 0.6)", // peach
-      "rgba(210, 140, 210, 0.6)", // purple
-      "rgba(255, 210, 150, 0.6)", // orange
+      "rgba(255, 160, 180, 0.9)", // pink
+      "rgba(150, 200, 220, 0.9)", // blue
+      "rgba(255, 200, 160, 0.9)", // peach
+      "rgba(210, 140, 210, 0.9)", // purple
+      "rgba(255, 210, 150, 0.9)", // orange
     ];
 
     // Create flowers
