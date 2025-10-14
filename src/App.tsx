@@ -12,11 +12,6 @@ import PortfolioGrid from "./components/PortfolioGrid";
 import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
 import AnimationControls from "./components/AnimationControls";
 
-// Conditionally import tempo-routes only in development
-const routes = import.meta.env.VITE_TEMPO === "true" 
-  ? (await import("tempo-routes")).default 
-  : [];
-
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
