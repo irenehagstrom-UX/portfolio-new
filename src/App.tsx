@@ -388,7 +388,7 @@ function App() {
       description: "Showcase of some of my more artistic side.",
       modalContent: {
         overview:
-          "Throughout my life I have been drawing, painting, photographing, creating videos, crafting and so on. Starting with the sun made in Kindergarten. Here are some sample works, created from the age of age 11 to 27.",
+          "Throughout my life I've' been drawing, painting, photographing, creating videos, crafting and more. Starting with the sun made in Kindergarten. Here are some sample works, created from the age of age 11.",
         process: "creative flow, paitience, trust, failure and trying again",
         outcomes: "some great and some not so great work",
         year: "1980 to now",
