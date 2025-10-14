@@ -104,7 +104,7 @@ const AboutMe = () => {
       {/* White Content Frame */}
       <div className="bg-white rounded-lg shadow-2xl max-w-5xl mx-auto overflow-y-auto">
         {/* Magazine Layout */}
-        <div className="px-6 py-[3] h-[2020]">
+        <div className="px-6 pt-12 pb-3 h-[2020]">
           {/* Magazine Header */}
           <div className="flex justify-between items-start mb-16">
             <div className="flex-1">
@@ -177,19 +177,20 @@ const AboutMe = () => {
           </div>
 
           {/* Hero Feature Article */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-[15]">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-[15]">
             {/* Large Feature Image */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="lg:col-span-2"
+              className="lg:col-span-3"
             >
               <div className="relative">
                 <img
                   src="/images/about irene.jpg"
                   alt="Irene at work"
                   className="w-full h-[450px] object-cover"
+                  style={{ objectPosition: '35% center' }}
                 />
                 <div className="absolute top-6 left-6 bg-white px-4 py-2">
                   <span className="text-xs font-medium text-gray-900 uppercase tracking-widest">
@@ -211,7 +212,7 @@ const AboutMe = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="lg:col-span-1 flex flex-col justify-center"
+              className="lg:col-span-2 flex flex-col justify-center"
             >
               <div className="space-y-6">
                 <div className="flex items-center gap-2 mb-4">
@@ -452,7 +453,7 @@ const AboutMe = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4 }}
             >
-              <div className="bg-gray-900 p-6 h-full">
+              <div className="bg-[#4a4a4a] p-6 h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl font-bold text-white">08</span>
                   <div className="w-6 h-0.5 bg-white"></div>

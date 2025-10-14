@@ -73,6 +73,7 @@ const Hero = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="bg-black/70 p-5 rounded-lg backdrop-blur-sm"
         >
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-4 text-[hsl(340,30%,80%)] font-satoshi drop-shadow-lg">
             {name}

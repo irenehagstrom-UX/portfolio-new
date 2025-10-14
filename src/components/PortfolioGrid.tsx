@@ -60,7 +60,7 @@ const PortfolioGrid = ({
   };
 
   return (
-    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]">
+    <div className="w-full py-12 px-4 sm:px-6 lg:px-8 bg-[#1a1a1a]/70 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-light text-gray-100 mb-4 font-satoshi">
