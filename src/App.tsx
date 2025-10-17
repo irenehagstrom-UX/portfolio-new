@@ -1,11 +1,13 @@
 import { Suspense, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import { Mail, Linkedin, Download } from "lucide-react";
+import { Mail, Linkedin, Download, ArrowLeftRight } from "lucide-react";
 import Home from "./components/home";
 import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
 import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
 import AnimationControls from "./components/AnimationControls";
+import LandingPage from "./components/LandingPage";
+import InteractivePage from "./components/InteractivePage";
 
 function App() {
   const navigate = useNavigate();
@@ -183,12 +185,16 @@ function App() {
         "/images/PR_aiven_wireframes.png",
         "/images/PD_ux_journey_2.png",
         "/images/PR-aivenCRDR.png",
+        "/images/PR_figma_prot.png",
       ],
       tags: [
         "UX design",
         "Product design",
         "Developer tools",
         "Cloud computing",
+        "Figma",
+        "Prototype",
+        "Wireframe",
       ],
       description:
         "UX and Product Design for developer tools. Transforming complex technical workflows into intuitive, user-friendly interfaces through research-driven design and close cross-functional collaboration.",
@@ -320,6 +326,29 @@ function App() {
       },
     },
     {
+      id: "9",
+      title: "AI Product Design",
+      image: "/images/PD_ai_thumb.png",
+      additionalImages: [
+        "/images/PD_celtic_edit.png",
+        "/images/PD_celtic-resources.png",
+        "/images/PD_crabline.png",
+        "/images/PD_kapa.png",
+        "/images/PD_ai_app.png",
+      ],
+      tags: ["AI creative tools", "App deployment design", "Context Design"],
+      description: "New learnings in ever-evolving field of AI.",
+      modalContent: {
+        overview:
+          "For more than two years I have been focusing on learning about new developments within Generative AI. In my current role, I have been involved in several AI realted project, currently working on an internal AI app solution for our Support team.",
+        process:
+          "No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it still requires proper context, guidance, and detailed requirements for the outcomes to be successful.",
+        outcomes:
+          "As in any field it's an ongoing learning journey. I am looking at understaning overall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
+        year: "First deployment Aug 2025- ongoing development.",
+      },
+    },
+    {
       id: "6",
       title: "EdTech Evaluation Tool Design",
       image: "/images/PD_keks_thumb.png",
@@ -349,15 +378,16 @@ function App() {
     {
       id: "7",
       title: "Industrial Design",
-      image: "images/PD_industrial design.png",
+      image: "/images/PD_industrial design.jpg",
       additionalImages: [
         "/images/PD_industrial_reeko.jpg",
         "/images/PD_industrial_D.png",
         "/images/PD_industrial_C.png",
         "/images/PD_industrial_B.png",
         "/images/PD_industrial_A.png",
+        "/images/PD_industrial_2.jpg",
       ],
-      tags: ["Industrial design", "Sustainable design"],
+      tags: ["Industrial design", "Sustainable design", "Industrial", "Product design"],
       description:
         "This project explores the design of sustainable recycling bins for public spaces, with a focus on combining functionality, cost-efficiency, and visual appeal. Inspired by natural forms, the result is a modular solution that balances smart design with environmental responsibility.",
       modalContent: {
@@ -394,63 +424,47 @@ function App() {
         year: "1980 to now",
       },
     },
-    {
-      id: "9",
-      title: "AI Product Design",
-      image: "/images/PD_ai_thumb.png",
-      additionalImages: [
-        "/images/PD_celtic_edit.png",
-        "/images/PD_celtic-resources.png",
-        "/images/PD_crabline.png",
-        "/images/PD_kapa.png",
-        "/images/PD_ai_app.png",
-      ],
-      tags: ["AI creative tools", "App deployment design", "Context Design"],
-      description: "New learnings in ever-evolving field of AI.",
-      modalContent: {
-        overview:
-          "For more than two years I have been focusing on learning about new developments within Generative AI. In my current role, I have been involved in several AI realted project, currently working on an internal AI app solution for our Support team.",
-        process:
-          "No matter how powerful an AI tool may be, successful outcomes still rely on the fundamentals of product design, planning, scope, user insights, functional specifications, and the right look and feel. While AI makes it possible to create quickly, it still requires proper context, guidance, and detailed requirements for the outcomes to be successful.",
-        outcomes:
-          "As in any field it's an ongoing learning journey. I am looking at understaning overall application development and deployment, system prompting, UI design for AI tools and more. This portfolio is an ever evolving product using tools such as TempoLabs, Leonardo.ai, and ChatGPT and GitHub.",
-        year: "First deployment Aug 2025- ongoing development.",
-      },
-    },
   ];
 
-  const showNavigation = true;
-  const isHomePage = location.pathname === "/";
+  // Determine if we're on landing or interactive pages (no navigation)
+  const isLandingPage = location.pathname === "/";
+  const isInteractivePage = location.pathname === "/interactive";
+  const showNavigation = !isLandingPage && !isInteractivePage;
+  
+  // Determine if we're in portfolio mode (traditional)
+  const isPortfolioMode = location.pathname.startsWith("/portfolio");
 
   return (
     <div className="min-h-screen relative bg-black">
-      {/* Animated Floral Background */}
-      <AnimatedFloralBackground
-        animationSpeed={animationSpeed / 100}
-        movementIntensity={movementIntensity / 100}
-        className="fixed inset-0 z-0"
-      />
-
-      {/* Animation Controls - Only on home page */}
-      {isHomePage && (
-        <AnimationControls
-          speed={animationSpeed}
-          intensity={movementIntensity}
-          onSpeedChange={setAnimationSpeed}
-          onIntensityChange={setMovementIntensity}
+      {/* Animated Floral Background - Only for portfolio pages */}
+      {!isLandingPage && !isInteractivePage && (
+        <AnimatedFloralBackground
+          animationSpeed={animationSpeed / 100}
+          movementIntensity={movementIntensity / 100}
+          className="fixed inset-0 z-0"
         />
       )}
 
       {/* Content */}
       <div className="relative z-10 min-h-screen overflow-y-auto">
-        {/* Navigation */}
+        {/* Navigation with Mode Switcher */}
         {showNavigation && (
           <header className="container mx-auto px-4 py-6">
-            <nav className="flex justify-end items-center">
+            <nav className="flex justify-between items-center">
+              {/* Mode Switcher */}
+              <button
+                onClick={() => navigate(isPortfolioMode ? "/interactive" : "/portfolio")}
+                className="flex items-center gap-2 text-gray-300 hover:text-[#7bd1de] transition-colors text-sm font-satoshi bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
+              >
+                <ArrowLeftRight className="w-4 h-4" />
+                Switch to {isPortfolioMode ? "Interactive" : "Portfolio"} Mode
+              </button>
+
+              {/* Main Navigation */}
               <ul className="flex space-x-6 h-[30px]">
                 <li>
                   <button
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate("/portfolio")}
                     className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Home
@@ -458,7 +472,7 @@ function App() {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate("/roles")}
+                    onClick={() => navigate("/portfolio/roles")}
                     className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Roles
@@ -466,7 +480,7 @@ function App() {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate("/discipline")}
+                    onClick={() => navigate("/portfolio/discipline")}
                     className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     Discipline
@@ -474,7 +488,7 @@ function App() {
                 </li>
                 <li>
                   <button
-                    onClick={() => navigate("/about-me")}
+                    onClick={() => navigate("/portfolio/about-me")}
                     className="text-gray-200 hover:text-primary transition-colors font-satoshi"
                   >
                     About
@@ -488,10 +502,17 @@ function App() {
         <Suspense fallback={<p className="text-gray-200 p-4">Loading...</p>}>
           <>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about-me" element={<AboutMe />} />
+              {/* Landing Page */}
+              <Route path="/" element={<LandingPage />} />
+              
+              {/* Interactive Mode */}
+              <Route path="/interactive" element={<InteractivePage />} />
+              
+              {/* Portfolio Mode (Traditional) */}
+              <Route path="/portfolio" element={<Home />} />
+              <Route path="/portfolio/about-me" element={<AboutMe />} />
               <Route
-                path="/roles"
+                path="/portfolio/roles"
                 element={
                   <div className="container mx-auto px-4 pb-20">
                     <PortfolioGrid
@@ -504,7 +525,7 @@ function App() {
                 }
               />
               <Route
-                path="/discipline"
+                path="/portfolio/discipline"
                 element={
                   <div className="container mx-auto px-4 pb-20">
                     <PortfolioGrid
@@ -529,14 +550,14 @@ function App() {
               </p>
               <div className="flex justify-center items-center gap-4 mt-4">
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:irene.hagstrom@gmail.com"
                   className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
                 >
                   <Mail className="w-3 h-3" />
                   Email me
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/irene-hagström"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
@@ -545,8 +566,8 @@ function App() {
                   LinkedIn profile
                 </a>
                 <a
-                  href="/path-to-resume.pdf"
-                  download
+                  href="/Irene_Hagstrom_Profile.pdf"
+                  download="Irene_Hagstrom_Profile.pdf"
                   className="text-gray-400 hover:text-primary transition-colors text-xs font-satoshi flex items-center gap-1"
                 >
                   <Download className="w-3 h-3" />

@@ -6,11 +6,11 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleExperienceClick = () => {
-    navigate("/roles");
+    navigate("/portfolio/roles");
   };
 
   const handleDisciplineClick = () => {
-    navigate("/discipline");
+    navigate("/portfolio/discipline");
   };
 
   return (

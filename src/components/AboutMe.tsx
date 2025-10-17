@@ -157,20 +157,16 @@ const AboutMe = () => {
                     </div>
                     Email me
                   </button>
-                  <button
+                  <a
+                    href="/Irene_Hagstrom_Profile.pdf"
+                    download="Irene_Hagstrom_Profile.pdf"
                     className="flex items-center gap-3 w-full text-left text-sm text-gray-700 hover:text-gray-900"
-                    onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = "/cv-irene-hagstrom.pdf";
-                      link.download = "Irene-Hagstrom-CV.pdf";
-                      link.click();
-                    }}
                   >
                     <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
                       <Download className="h-4 w-4 text-white" />
                     </div>
                     Download CV
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -187,7 +183,7 @@ const AboutMe = () => {
             >
               <div className="relative">
                 <img
-                  src="/images/about irene.jpg"
+                  src="/images/irene_aboutme.jpg"
                   alt="Irene at work"
                   className="w-full h-[450px] object-cover"
                   style={{ objectPosition: '35% center' }}
