@@ -48,7 +48,7 @@ const InteractivePage = () => {
           className="mb-6 text-center"
         >
           <h1 className="text-4xl font-bold text-gray-800 mb-3 font-satoshi">
-            Ask about me and my experience
+            Ask about me
           </h1>
         </motion.div>
 

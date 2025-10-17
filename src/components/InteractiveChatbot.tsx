@@ -437,6 +437,7 @@ const InteractiveChatbot = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [hasStartedChat, setHasStartedChat] = useState(false);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -453,6 +454,11 @@ const InteractiveChatbot = () => {
     // Expand on first user message
     if (!isExpanded) {
       setIsExpanded(true);
+    }
+
+    // Mark that chat has started
+    if (!hasStartedChat) {
+      setHasStartedChat(true);
     }
 
     const userMessage: Message = {
@@ -909,7 +915,7 @@ const InteractiveChatbot = () => {
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           <AnimatePresence>
-            {messages.map((message) => (
+            {messages.map((message, index) => (
               <motion.div
                 key={message.id}
                 initial={{ opacity: 0, y: 10 }}
@@ -917,6 +923,15 @@ const InteractiveChatbot = () => {
                 transition={{ duration: 0.3 }}
                 className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
               >
+                {message.sender === "bot" && (
+                  <img
+                    src="/irene-avatar.jpg"
+                    alt="Irene"
+                    className={`rounded-full mr-3 flex-shrink-0 object-cover ${
+                      !hasStartedChat && index === 0 ? "w-24 h-24" : "w-10 h-10"
+                    }`}
+                  />
+                )}
                 <div
                   className={`max-w-[75%] rounded-2xl px-4 py-3 ${
                     message.sender === "user"
