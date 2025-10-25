@@ -233,7 +233,6 @@ const imageDatabase: Record<string, string[]> = {
   "/images/PD_art_3.jpg": ["art", "drawing"],
   "/images/PD_art_4.jpg": ["art", "drawing"],
   "/images/PD_art_4B.jpg": ["art", "drawing"],
-  "/images/PD_art_5.jpg": ["art", "drawing"],
   "/images/PD_art_6.jpg": ["art", "drawing"],
   "/images/PD_art_7.jpg": ["art", "drawing"],
   "/images/PD_ai_app.png": ["ai", "ui", "ux", "aiven"],
@@ -493,6 +492,103 @@ const InteractiveChatbot = () => {
   ): { text: string; images?: string[] } => {
     const lowerInput = input.toLowerCase();
 
+    // Graphic Design / Graphic Skills / Print Design / Visual Design
+    if (
+      lowerInput.includes("graphic") ||
+      lowerInput.includes("print design") ||
+      lowerInput.includes("visual design") ||
+      lowerInput.includes("branding") ||
+      lowerInput.includes("logo") ||
+      lowerInput.includes("brand identity")
+    ) {
+      return {
+        text: "I have extensive graphic design experience spanning 20+ years. My graphic design work includes logo design, brand identity development, marketing materials for company conferences, print design (business cards, flyers, brochures, magazines), neon light signs, website landing pages, online marketing banner ads, web graphics, and visual communication systems. At LKzwo (2015-2020), I led brand identity projects from concept to execution. At dooyoo AG (2000-2001), I was Graphic & Web Designer and Team Lead. I've created logos for multiple companies, designed print materials for fashion brands (Honeyants), and developed comprehensive brand guidelines. My graphic design approach combines aesthetic appeal with strategic thinking—every visual element serves both the brand identity and user needs. I previously used Adobe Creative Suite (Photoshop, Illustrator, InDesign) and now primarily use Figma and Canva for modern design workflows.",
+        images: findImagesByKeywords("brand logo graphic print marketing"),
+      };
+    }
+
+    // Service Design / Workflow Design / Process Design / Business Process
+    if (
+      lowerInput.includes("service design") ||
+      lowerInput.includes("workflow") ||
+      lowerInput.includes("process design") ||
+      lowerInput.includes("business process") ||
+      lowerInput.includes("journey map")
+    ) {
+      return {
+        text: "Service design is a core part of my expertise. At Standards Australia (2006-2011), I designed document workflow and knowledge management systems for 8,000+ users, mapping complex business processes and streamlining operations. At Aiven (2021-Present), I analyzed, mapped out, and streamlined an internal business workflow process for one of our services. For feature development, I examine the whole user journey and touchpoints to understand how the entire service could be improved. I create user journey maps, service blueprints, and workflow diagrams to visualize and optimize end-to-end experiences. At Cornelsen (2012-2013), I designed learning journeys that integrated digital and physical touchpoints. My service design approach involves stakeholder workshops, process mapping, identifying pain points, and designing solutions that improve both user experience and operational efficiency. I use tools like Miro for collaborative mapping and Figma for visualizing service flows.",
+        images: findImagesByKeywords("workflow process journey service design"),
+      };
+    }
+
+    // Fashion Design / Clothing Design / Textile Design
+    if (
+      lowerInput.includes("fashion") ||
+      lowerInput.includes("clothing") ||
+      lowerInput.includes("textile") ||
+      lowerInput.includes("garment") ||
+      lowerInput.includes("apparel")
+    ) {
+      return {
+        text: "I founded Honeyants Pty Ltd (2008-2010, Sydney), a sustainable children's fashion label where I was Lead Designer. I designed garments from concept to production, created print graphics for screen printing on fabrics, managed the entire supply chain, and developed the brand identity. When I was younger, I also sewed some of my own outfits, which gave me hands-on experience with garment construction. My fashion design process involved sketching concepts, selecting sustainable materials, creating technical specifications for manufacturers, and overseeing production. I gained media coverage for sustainability efforts and unique designs. This experience taught me end-to-end product development, from initial concept through manufacturing to retail and e-commerce. I understand fabric properties, garment construction, sustainable production methods, and the fashion business from both creative and commercial perspectives.",
+        images: findImagesByKeywords("fashion honeyants clothes"),
+      };
+    }
+
+    // Interior Design / Space Design / Environmental Design
+    if (
+      lowerInput.includes("interior") ||
+      lowerInput.includes("space design") ||
+      lowerInput.includes("environmental design") ||
+      lowerInput.includes("spatial")
+    ) {
+      return {
+        text: "While interior design isn't my primary professional focus, I have practical experience and a strong passion for spatial design. I've helped design 2 kitchens for an apartment realtor and love redecorating my own house—planning how rooms could be set up and decorated. My industrial design background (sustainable recycling bins for public spaces) involved considering how products fit into and enhance physical environments. I understand principles of spatial organization, user flow in physical spaces, and how design creates atmosphere and functionality. My apartment is full of plants and art—I love creating beautiful, functional spaces! This aesthetic sensibility informs my digital design work, where I think about visual hierarchy, spacing, and creating comfortable user environments.",
+        images: findImagesByKeywords("industrial product design"),
+      };
+    }
+
+    // Business Analyst / Analyst / Requirements / Functional Specifications
+    if (
+      lowerInput.includes("business analyst") ||
+      lowerInput.includes("analyst") ||
+      lowerInput.includes("requirements") ||
+      lowerInput.includes("functional spec") ||
+      lowerInput.includes("requirements gathering")
+    ) {
+      return {
+        text: "I worked as Senior Business Analyst at Standards Australia (2006-2011, Sydney), where I led requirements gathering for complex systems serving 8,000+ users. I'm a Certified Professional for Requirements Engineering (Sophist GmbH, Berlin) and completed Mastering the Requirements Process training. My analyst work involves conducting stakeholder workshops, documenting business processes, creating functional specifications, writing user stories, and translating business needs into technical requirements. I use techniques like process modeling, use case analysis, and requirements prioritization. At Cornelsen (2012-2013), I led requirement analysis for e-learning systems. My analytical skills help me bridge the gap between business stakeholders and technical teams, ensuring everyone has a shared understanding of project goals and constraints.",
+        images: findImagesByKeywords("requirements functional spec workflow process"),
+      };
+    }
+
+    // Manager / Management Experience / Team Management / People Management
+    if (
+      lowerInput.includes("manager") ||
+      lowerInput.includes("management experience") ||
+      lowerInput.includes("managing people") ||
+      lowerInput.includes("team management") ||
+      lowerInput.includes("people management")
+    ) {
+      return {
+        text: "I have extensive management experience across multiple roles and contexts. At Aiven (2021-Present), I mentor junior designers and sometimes act as product lead, ensuring alignment across product and engineering teams. I typically manage project teams of 3-5 people on projects lasting 3-4 months, focusing on people management within project contexts. At LKzwo (2015-2020), I was Marketing and Brand Lead, managing brand strategy and client relationships. At Honeyants (2008-2010), I managed the entire business as founder—from design and production to marketing and sales. At dooyoo AG (2000-2001), I was Team Lead for graphic and web design. My management philosophy centers on coaching-style leadership that empowers teams, fostering open communication, creating safe environments for experimentation, and recognizing successes. I organize work efficiently, delegate based on team strengths, and maintain transparency with stakeholders. I've achieved a 97% project success rate through effective team coordination and stakeholder management.",
+        images: findImagesByKeywords("facilitator presenter workshop project manager"),
+      };
+    }
+
+    // Product Design (physical products) / Industrial Design / Product Development
+    if (
+      lowerInput.includes("product design") &&
+      (lowerInput.includes("physical") ||
+        lowerInput.includes("industrial") ||
+        lowerInput.includes("tangible"))
+    ) {
+      return {
+        text: "I have a Bachelor of Science in Product Development Engineering from the University of Skövde, Sweden. My 1999 thesis involved designing sustainable recycling bins for public spaces—hexagon-shaped bins inspired by beehives that use minimal material while providing maximum stability. 25 years later, similar designs can still be seen throughout Sweden! At Honeyants (2008-2010), I designed fashion products from concept through manufacturing. My product design approach considers sustainability, manufacturing constraints, user needs, aesthetics, and lifecycle. I understand CAD modeling, material properties, production processes, and how to balance design vision with practical constraints. This physical product background informs my digital product work—I think holistically about the entire product ecosystem.",
+        images: findImagesByKeywords("industrial product design fashion"),
+      };
+    }
+
     // UX Work / UX Design / Product Design / User Experience / UI Design / Interface Design / UI Related / UI Work
     if (
       lowerInput.includes("ux work") ||
@@ -511,7 +607,7 @@ const InteractiveChatbot = () => {
       lowerInput.includes("what design tools")
     ) {
       return {
-        text: "I'm currently a Senior Product & UX Designer at Aiven (2021-Present, Berlin), where I design complex, data-intensive developer products from discovery to delivery. My work includes conducting user research, benchmarking, facilitating workshops, creating wireframes and high-fidelity designs in Figma, and running user testing sessions. I've also designed e-learning solutions at Cornelsen (2012-2013), workflow systems at Standards Australia (2006-2011), and sustainable fashion products at Honeyants (2008-2010). My approach is user-centered: I balance user needs with business objectives, translating complex requirements into intuitive digital experiences. I use tools like Figma, Miro, Adobe Suite, Jira, and PostHog, and I conduct both qualitative and quantitative research to validate design decisions.",
+        text: "I'm currently a Senior Product & UX Designer at Aiven (2021-Present, Berlin), where I design complex, data-intensive developer products from discovery to delivery. My work includes conducting user research, benchmarking, facilitating workshops, creating wireframes and high-fidelity designs in Figma, and running user testing sessions. I've also designed e-learning solutions at Cornelsen (2012-2013), workflow systems at Standards Australia (2006-2011), and sustainable fashion products at Honeyants (2008-2010). My approach is user-centered: I balance user needs with business objectives, translating complex requirements into intuitive digital experiences. I use tools like Figma, Miro, Adobe Suite, Jira, and PostHog, and I conduct both qualitative and quantitative research to validate design decisions. My UX work spans information architecture, interaction design, visual design, prototyping, user research, usability testing, and design systems.",
         images: findImagesByKeywords("aiven ux ui wireframe journey prototype"),
       };
     }
@@ -530,7 +626,7 @@ const InteractiveChatbot = () => {
       lowerInput.includes("complex project you managed")
     ) {
       return {
-        text: "I worked as a Project Manager at Standards Australia (2004-2006, Sydney), where I coordinated national and international meetings and ISO plenary sessions, introduced improved business workflows, and facilitated standards committee collaborations for establishing international ISO standards in MPEG4, accessibility, user interfaces, and e-learning. Throughout my career, I've led workshops, facilitated stakeholder engagement, and coordinated multi-stakeholder initiatives with a 97% project success rate. I take ownership of projects and actively engage stakeholders through needs workshops, ideation sessions, and regular updates to ensure transparency and shared ownership. I promote transparency and shared ownership, helping identify pain points, needs, risks, and constraints for greater project success.",
+        text: "I worked as a Project Manager at Standards Australia (2004-2006, Sydney), where I coordinated national and international meetings and ISO plenary sessions, introduced improved business workflows, and facilitated standards committee collaborations for establishing international ISO standards in MPEG4, accessibility, user interfaces, and e-learning. Throughout my career, I've led workshops, facilitated stakeholder engagement, and coordinated multi-stakeholder initiatives with a 97% project success rate. I take ownership of projects and actively engage stakeholders through needs workshops, ideation sessions, and regular updates to ensure transparency and shared ownership. I promote transparency and shared ownership, helping identify pain points, needs, risks, and constraints for greater project success. I'm experienced with both Agile (Scrum, Kanban) and Waterfall methodologies.",
         images: findImagesByKeywords("project manager workshop facilitator"),
       };
     }
@@ -565,7 +661,7 @@ const InteractiveChatbot = () => {
       lowerInput.includes("technologies")
     ) {
       return {
-        text: "My key skills include Product & UX Design (UX/UI design, information architecture, interaction design, content strategy, product design, sustainable design, fashion design), Leadership & Team Development (mentoring, coaching, team workflow setup), Business Analysis & Process Optimization (requirements gathering, process modeling, workflow automation), Research & Strategy (qualitative & quantitative UX research, market analysis, data-driven decision-making), and Project & Stakeholder Management (cross-functional collaboration, Agile methodologies like Scrum and Kanban, facilitation, roadmap planning). I'm proficient in tools like Figma, Miro, Adobe Suite, Jira, PostHog, HTML/CSS, and WordPress. I've successfully implemented 97% of the projects I've been involved in!",
+        text: "My key skills span multiple design disciplines: UX/UI Design (user research, wireframing, prototyping, interaction design, information architecture, visual design, design systems), Product Design (digital products, physical products, sustainable design, fashion design), Graphic Design (brand identity, logo design, print design, marketing materials), Service Design (journey mapping, workflow design, process optimization), Business Analysis (requirements gathering, functional specifications, process modeling), and Leadership (mentoring, team management, stakeholder engagement, project management). I'm proficient in Figma, Miro, Adobe Creative Suite, Jira, PostHog, HTML/CSS, WordPress, and various prototyping tools. I have 20+ years of experience across tech, education, fashion, and standards development with a 97% project success rate.",
         images: findImagesByKeywords(input),
       };
     }

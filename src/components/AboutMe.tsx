@@ -51,7 +51,7 @@ const AboutMe = () => {
     "Cross-collaboration",
     "Product management",
     "Leadership & mentoring",
-    "Sucess metrics and data analytics",
+    "Success metrics and data analytics",
   ];
 
   const countries = [
@@ -186,7 +186,7 @@ const AboutMe = () => {
                   src="/images/irene_aboutme.jpg"
                   alt="Irene at work"
                   className="w-full h-[450px] object-cover"
-                  style={{ objectPosition: '35% center' }}
+                  style={{ objectPosition: "35% center" }}
                 />
                 <div className="absolute top-6 left-6 bg-white px-4 py-2">
                   <span className="text-xs font-medium text-gray-900 uppercase tracking-widest">

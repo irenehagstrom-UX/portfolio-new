@@ -23,11 +23,10 @@ function App() {
       image:
         "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80",
       additionalImages: [
-        "/images/PR_aiven_live.png",
+        "/images/PR_aiven_overview.png",
         "/images/PR_aiven_wireframes.png",
         "/images/PR_ux_services.png",
         "/images/PR_aiven_CRDR.png",
-        "/images/PR_aiven_overview.png",
       ],
       tags: [
         "Product design",
@@ -132,8 +131,8 @@ function App() {
       title: "Product Manager and Facilitator",
       image: "/images/PR_pm_thumb.png",
       additionalImages: [
-        "/images/AIVEN_25APRIL_stage.jpg",
         "/images/PR-PM_workshop.jpg",
+        "/images/PR-aiven_workshop.jpg",
       ],
       tags: [
         "Facilitator",
@@ -409,7 +408,6 @@ function App() {
         "/images/PD_art_2.jpg",
         "/images/PD_art_3.jpg",
         "/images/PD_art_4.jpg",
-        "/images/PD_art_5.jpg",
         "/images/PD_art_6.jpg",
         "/images/PD_art_7.jpg",
         "/images/PD_frames.jpg",
