@@ -1,13 +1,11 @@
 import { Suspense, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import { Mail, Linkedin, Download, ArrowLeftRight } from "lucide-react";
+import { Mail, Linkedin, Download } from "lucide-react";
 import Home from "./components/home";
 import AboutMe from "./components/AboutMe";
 import PortfolioGrid from "./components/PortfolioGrid";
 import AnimatedFloralBackground from "./components/AnimatedFloralBackground";
-import AnimationControls from "./components/AnimationControls";
-import LandingPage from "./components/LandingPage";
-import InteractivePage from "./components/InteractivePage";
+import FloatingChatbot from "./components/FloatingChatbot";
 
 function App() {
   const navigate = useNavigate();
@@ -424,93 +422,76 @@ function App() {
     },
   ];
 
-  // Determine if we're on landing or interactive pages (no navigation)
-  const isLandingPage = location.pathname === "/";
-  const isInteractivePage = location.pathname === "/interactive";
-  const showNavigation = !isLandingPage && !isInteractivePage;
-  
-  // Determine if we're in portfolio mode (traditional)
-  const isPortfolioMode = location.pathname.startsWith("/portfolio");
-
   return (
     <div className="min-h-screen relative bg-black">
-      {/* Animated Floral Background - Only for portfolio pages */}
-      {!isLandingPage && !isInteractivePage && (
-        <AnimatedFloralBackground
-          animationSpeed={animationSpeed / 100}
-          movementIntensity={movementIntensity / 100}
-          className="fixed inset-0 z-0"
-        />
-      )}
+      {/* Animated Floral Background */}
+      <AnimatedFloralBackground
+        animationSpeed={animationSpeed / 100}
+        movementIntensity={movementIntensity / 100}
+        className="fixed inset-0 z-0"
+      />
 
       {/* Content */}
       <div className="relative z-10 min-h-screen overflow-y-auto">
-        {/* Navigation with Mode Switcher */}
-        {showNavigation && (
-          <header className="container mx-auto px-4 py-6">
-            <nav className="flex justify-between items-center">
-              {/* Mode Switcher */}
-              <button
-                onClick={() => navigate(isPortfolioMode ? "/interactive" : "/portfolio")}
-                className="flex items-center gap-2 text-gray-300 hover:text-[#7bd1de] transition-colors text-sm font-satoshi bg-black/50 px-4 py-2 rounded-lg backdrop-blur-sm"
-              >
-                <ArrowLeftRight className="w-4 h-4" />
-                Switch to {isPortfolioMode ? "Interactive" : "Portfolio"} Mode
-              </button>
-
-              {/* Main Navigation */}
-              <ul className="flex space-x-6 h-[30px]">
-                <li>
-                  <button
-                    onClick={() => navigate("/portfolio")}
-                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
-                  >
-                    Home
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => navigate("/portfolio/roles")}
-                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
-                  >
-                    Roles
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => navigate("/portfolio/discipline")}
-                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
-                  >
-                    Discipline
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => navigate("/portfolio/about-me")}
-                    className="text-gray-200 hover:text-primary transition-colors font-satoshi"
-                  >
-                    About
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </header>
-        )}
+        {/* Navigation */}
+        <header className="container mx-auto px-4 py-6">
+          <nav className="flex justify-end items-center">
+            {/* Main Navigation */}
+            <ul className="flex space-x-6 h-[30px]">
+              <li>
+                <button
+                  onClick={() => navigate("/")}
+                  className="text-gray-200 hover:text-primary transition-colors font-satoshi"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/roles")}
+                  className="text-gray-200 hover:text-primary transition-colors font-satoshi"
+                >
+                  Roles
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/discipline")}
+                  className="text-gray-200 hover:text-primary transition-colors font-satoshi"
+                >
+                  Discipline
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => navigate("/about-me")}
+                  className="text-gray-200 hover:text-primary transition-colors font-satoshi"
+                >
+                  About
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </header>
 
         <Suspense fallback={<p className="text-gray-200 p-4">Loading...</p>}>
           <>
             <Routes>
-              {/* Landing Page */}
-              <Route path="/" element={<LandingPage />} />
-              
-              {/* Interactive Mode */}
-              <Route path="/interactive" element={<InteractivePage />} />
-              
-              {/* Portfolio Mode (Traditional) */}
-              <Route path="/portfolio" element={<Home />} />
-              <Route path="/portfolio/about-me" element={<AboutMe />} />
+              {/* Home Page */}
+              <Route 
+                path="/" 
+                element={
+                  <Home 
+                    animationSpeed={animationSpeed}
+                    movementIntensity={movementIntensity}
+                    onSpeedChange={setAnimationSpeed}
+                    onIntensityChange={setMovementIntensity}
+                  />
+                } 
+              />
+              <Route path="/about-me" element={<AboutMe />} />
               <Route
-                path="/portfolio/roles"
+                path="/roles"
                 element={
                   <div className="container mx-auto px-4 pb-20">
                     <PortfolioGrid
@@ -523,7 +504,7 @@ function App() {
                 }
               />
               <Route
-                path="/portfolio/discipline"
+                path="/discipline"
                 element={
                   <div className="container mx-auto px-4 pb-20">
                     <PortfolioGrid
@@ -539,8 +520,8 @@ function App() {
           </>
         </Suspense>
 
-        {/* Footer */}
-        {showNavigation && (
+        {/* Footer - Hidden on home page */}
+        {location.pathname !== "/" && (
           <footer className="py-6">
             <div className="container mx-auto px-4 text-center">
               <p className="text-gray-400 text-xs mt-3">
@@ -575,7 +556,11 @@ function App() {
             </div>
           </footer>
         )}
+
       </div>
+
+      {/* Floating Chatbot - Hidden on home page */}
+      {location.pathname !== "/" && <FloatingChatbot />}
     </div>
   );
 }

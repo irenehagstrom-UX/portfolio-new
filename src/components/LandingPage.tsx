@@ -31,22 +31,19 @@ const LandingPage = () => {
             different next week.
           </p>
 
-          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-6">
             You can explore it as a{" "}
             <button
               onClick={() => navigate("/portfolio")}
               className="text-[#7bd1de] hover:text-[#F4C56D] transition-colors font-semibold"
             >
               traditional website
-            </button>{" "}
-            or ask questions about Irene with my{" "}
-            <button
-              onClick={() => navigate("/interactive")}
-              className="text-[#7bd1de] hover:text-[#F4C56D] transition-colors font-semibold"
-            >
-              Chatbot Avatar
             </button>
             .
+          </p>
+
+          <p className="text-base text-gray-600 leading-relaxed">
+            Have questions? Chat with my avatar using the chatbot in the bottom right corner!
           </p>
         </motion.div>
       </div>

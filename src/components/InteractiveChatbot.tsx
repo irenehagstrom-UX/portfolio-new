@@ -1002,7 +1002,7 @@ const InteractiveChatbot = () => {
     >
       {/* Chat Section */}
       <motion.div
-        className="flex flex-col bg-white/70 backdrop-blur-sm rounded-lg border border-gray-200 overflow-hidden"
+        className="flex flex-col bg-[#3a3a3a] backdrop-blur-sm rounded-lg border border-gray-600 overflow-hidden"
         animate={{
           width: isExpanded ? "55%" : "100%",
         }}
@@ -1031,8 +1031,8 @@ const InteractiveChatbot = () => {
                 <div
                   className={`max-w-[75%] rounded-2xl px-4 py-3 ${
                     message.sender === "user"
-                      ? "bg-[#F4C56D] text-gray-700"
-                      : "bg-gray-100 text-gray-800 border border-gray-200"
+                      ? "bg-[#F4C56D] text-gray-900"
+                      : "bg-[#4a4a4a] text-gray-100 border border-gray-600"
                   }`}
                 >
                   <p className="text-sm leading-relaxed">{message.text}</p>
@@ -1044,13 +1044,13 @@ const InteractiveChatbot = () => {
         </div>
 
         {/* Input */}
-        <div className="border-t border-gray-200 p-4 bg-white/50">
+        <div className="border-t border-gray-600 p-4 bg-[#3a3a3a]">
           <form onSubmit={handleSubmit} className="flex gap-2">
             <Input
               placeholder="Ask me a question"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className="flex-1 bg-white text-gray-700 placeholder:text-gray-500"
+              className="flex-1 bg-[#2a2a2a] text-gray-100 placeholder:text-gray-400 border-gray-600"
             />
             <Button
               type="submit"
@@ -1060,7 +1060,7 @@ const InteractiveChatbot = () => {
               <Send className="w-4 h-4" />
             </Button>
           </form>
-          <p className="text-[10px] text-gray-500 mt-2 italic">
+          <p className="text-[10px] text-gray-400 mt-2 italic">
             Disclaimer: This chatbot is limited to the content displayed on this
             website, and including other materials such as resumes, LinkedIN
             profile and some personal stories.
@@ -1073,9 +1073,9 @@ const InteractiveChatbot = () => {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex-1 bg-white/70 backdrop-blur-sm rounded-lg border border-gray-200 p-4 overflow-y-auto"
+          className="flex-1 bg-[#3a3a3a] backdrop-blur-sm rounded-lg border border-gray-600 p-4 overflow-y-auto"
         >
-          <h3 className="text-sm font-semibold text-gray-700 mb-3">
+          <h3 className="text-sm font-semibold text-gray-100 mb-3">
             Related Images
           </h3>
           <div className="space-y-3">
@@ -1084,7 +1084,7 @@ const InteractiveChatbot = () => {
                 key={index}
                 src={img}
                 alt={`Related content ${index + 1}`}
-                className="w-full rounded-lg border border-gray-200"
+                className="w-full rounded-lg border border-gray-600"
               />
             ))}
           </div>
